@@ -51,6 +51,7 @@ class PrintTextChunk
     public function setText ( string $text )
     {
         $this->text = $text;
+        return $this;
     }
 
     /**
@@ -67,6 +68,7 @@ class PrintTextChunk
     public function setFont ( int $font )
     {
         $this->font = $font;
+        return $this;
     }
 
     /**
@@ -83,6 +85,7 @@ class PrintTextChunk
     public function setIntensity ( int $intensity )
     {
         $this->intensity = $intensity;
+        return $this;
     }
 
 

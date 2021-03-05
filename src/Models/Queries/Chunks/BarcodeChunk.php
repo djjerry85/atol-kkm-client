@@ -43,6 +43,7 @@ class BarcodeChunk
     public function setBarcodeType ( string $barcodeType )
     {
         $this->barcodeType = $barcodeType;
+        return $this;
     }
 
     /**

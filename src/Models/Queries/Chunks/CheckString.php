@@ -51,6 +51,7 @@ class CheckString
     public function setPrintText ( PrintTextChunk $printText )
     {
         $this->printText = $printText;
+        return $this;
     }
 
     /**
@@ -83,6 +84,7 @@ class CheckString
     public function setBarcode ( $barcode )
     {
         $this->barcode = $barcode;
+        return $this;
     }
 
 

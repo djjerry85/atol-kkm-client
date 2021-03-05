@@ -95,6 +95,7 @@ class RegisterChunk
     public function setName ( string $name )
     {
         $this->name = $name;
+        return $this;
     }
 
     /**
@@ -111,6 +112,7 @@ class RegisterChunk
     public function setQuantity ( int $quantity )
     {
         $this->quantity = $quantity;
+        return $this;
     }
 
     /**
@@ -127,6 +129,7 @@ class RegisterChunk
     public function setPrice ( float $price )
     {
         $this->price = $price;
+        return $this;
     }
 
     /**
@@ -143,6 +146,7 @@ class RegisterChunk
     public function setAmount ( float $amount )
     {
         $this->amount = $amount;
+        return $this;
     }
 
     /**
