@@ -1,7 +1,7 @@
 {
-    "name": "zeroabe/atol-kkm-client",
-    "description": "HTTP Client for using with kkmserver",
-    "version": "0.1.1-dev",
+    "name": "djjerry85/atol-kkm-client",
+    "description": "HTTP Client for using with kkmserver. Fork zeroabe/atol-kkm-client",
+    "version": "0.2.1-dev",
     "license": "MIT",
     "authors": [
         {
@@ -16,7 +16,7 @@
         }
     },
     "require": {
-        "php": "^7.0",
+        "php": "^7.2",
         "ramsey/uuid": "^4.1",
         "guzzlehttp/guzzle": "^6.2",
         "jms/serializer": "^1.7",

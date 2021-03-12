@@ -35,6 +35,13 @@ class CheckString
      */
     protected $barcode;
 
+    /**
+     * @var \KKMClient\Models\Queries\Chunks\ImageChunk|null
+     * @SerializedName("PrintImage")
+     * @Type("KKMClient\Models\Queries\Chunks\ImageChunk")
+     */
+    protected $printImage;
+
     public function __construct () { }
 
     /**
@@ -87,5 +94,14 @@ class CheckString
         return $this;
     }
 
+    public function getPrintImage(): ?ImageChunk
+    {
+        return $this->printImage;
+    }
 
+    public function setPrintImage(?ImageChunk $printImage): self
+    {
+        $this->printImage = $printImage;
+        return $this;
+    }
 }

@@ -64,7 +64,8 @@ class Client
             'auth' => [
                 $options['user'], $options['pass']
             ],
-            'verify' => false
+            'verify' => false,
+            'connect_timeout' => 30
         ];
         $this->http = new Http($config);
         $this->factory = new QueriesFactory();
@@ -90,6 +91,8 @@ class Client
         if(!$command->getName())
             throw new UnknownKKMCommand($command);
         $serializedCommand = $this->factory->serializeCommand($command);
+
+        //echo $serializedCommand; exit;
 
         $response = $this->http->request('post', '', ['body' => $serializedCommand]);
 
