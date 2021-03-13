@@ -65,7 +65,7 @@ class Client
                 $options['user'], $options['pass']
             ],
             'verify' => false,
-            'connect_timeout' => 30
+            'timeout' => 30
         ];
         $this->http = new Http($config);
         $this->factory = new QueriesFactory();
