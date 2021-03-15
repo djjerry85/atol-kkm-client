@@ -1,7 +1,7 @@
 {
     "name": "djjerry85/atol-kkm-client",
+    "type": "library",
     "description": "HTTP Client for using with kkmserver. Fork zeroabe/atol-kkm-client",
-    "version": "1.0.1",
     "license": "MIT",
     "authors": [
         {
@@ -21,7 +21,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "jms/serializer": "^1.7",
         "kherge/json": "^2.0",
-        "doctrine/common": "^2.7"
+        "doctrine/common": "^3.1"
     },
     "require-dev": {
         "symfony/var-dumper": "^5.2"
