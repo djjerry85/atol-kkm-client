@@ -75,7 +75,7 @@ class CheckStringsBuilder
     {
         $barcode = new BarcodeChunk();
         $barcode->setBarcode($textContent);
-        $barcode->setBarcodeType('PDF417');
+        $barcode->setBarcodeType('QR');
         $s = (new CheckString())->setBarcode($barcode);
 
         $this->lines[] = $s;
