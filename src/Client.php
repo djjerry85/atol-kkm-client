@@ -7,13 +7,14 @@ use JMS\Serializer\Exception\LogicException;
 use KKMClient\Interfaces\CommandInterface;
 use KKMClient\Factories\QueriesFactory;
 use Autoload\Annotations;
+use KKMClient\Interfaces\KKMCommandHandler;
 
 /**
  * Class Client
  * @package KKMClient
  * Позволяет совершать запросы к серверу ККМ
  */
-class Client implements KKMClient
+class Client implements KKMCommandHandler
 {
     /**
      * @var Http
