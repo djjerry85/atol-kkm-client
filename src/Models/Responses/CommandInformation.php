@@ -14,8 +14,8 @@ class CommandInformation implements ResponseInterface
 
     /**
      * @var
-     * @SerializedName("Rezult")
-     * @Type(<KKMClient\Interfaces\ResponseInterface>)
      */
+    #[SerializedName('Rezult')]
+    #[Type('<KKMClient\Interfaces\ResponseInterface')] // >)
     protected $result;
 }

@@ -14,46 +14,46 @@ use JMS\Serializer\Annotation\AccessType;
 /**
  * Class RegisterCheck
  * @package KKMClient\Models\Responses
- * @AccessType("public_method");
  *
  */
+#[AccessType(type:'public_method')] // ;
 class RegisterCheck implements ResponseInterface
 {
     use CommonResponseTrait;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("URL")
      */
+    #[Type('string')]
+    #[SerializedName('URL')]
     protected $url;
 
     /**
      * @var integer
-     * @Type("integer")
-     * @SerializedName("CheckNumber")
      */
+    #[Type('integer')]
+    #[SerializedName('CheckNumber')]
     protected $checkNumber;
 
     /**
      * @var integer
-     * @SerializedName("SessionNumber")
-     * @Type("integer")
      */
+    #[SerializedName('SessionNumber')]
+    #[Type('integer')]
     protected $sessionNumber;
 
     /**
      * @var integer
-     * @SerializedName("LineLength")
-     * @Type("integer")
      */
+    #[SerializedName('LineLength')]
+    #[Type('integer')]
     protected $lineLength;
 
     /**
      * @var string|null
-     * @SerializedName("Info")
-     * @Type("string")
      */
+    #[SerializedName('Info')]
+    #[Type('string')]
     protected $info;
 
     /**
@@ -67,7 +67,7 @@ class RegisterCheck implements ResponseInterface
     /**
      * @param string $url
      */
-    public function setUrl ( string $url )
+    public function setUrl ( string $url ): void
     {
         $this->url = $url;
     }
@@ -83,7 +83,7 @@ class RegisterCheck implements ResponseInterface
     /**
      * @param int $checkNumber
      */
-    public function setCheckNumber ( int $checkNumber )
+    public function setCheckNumber ( int $checkNumber ): void
     {
         $this->checkNumber = $checkNumber;
     }
@@ -99,7 +99,7 @@ class RegisterCheck implements ResponseInterface
     /**
      * @param int $sessionNumber
      */
-    public function setSessionNumber ( int $sessionNumber )
+    public function setSessionNumber ( int $sessionNumber ): void
     {
         $this->sessionNumber = $sessionNumber;
     }
@@ -115,7 +115,7 @@ class RegisterCheck implements ResponseInterface
     /**
      * @param int $lineLength
      */
-    public function setLineLength ( int $lineLength = null)
+    public function setLineLength ( int $lineLength = null): void
     {
         $this->lineLength = $lineLength;
     }
@@ -131,7 +131,7 @@ class RegisterCheck implements ResponseInterface
     /**
      * @param null|string $info
      */
-    public function setInfo ( $info )
+    public function setInfo ( $info ): void
     {
         $this->info = $info;
     }

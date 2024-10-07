@@ -10,29 +10,29 @@ use JMS\Serializer\Annotation\AccessType;
 /**
  * Class EGAIS
  * @package KKMClient\Queries\Chunks
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class EGAIS
 {
     /**
      * @var string
-     * @SerializedName("Barcode")
-     * @Type("string")
      */
+    #[SerializedName('Barcode')]
+    #[Type('string')]
     protected $barcode;
 
     /**
      * @var string
-     * @SerializedName("Ean")
-     * @Type("string")
      */
+    #[SerializedName('Ean')]
+    #[Type('string')]
     protected $ean;
 
     /**
      * @var float
-     * @SerializedName("Volume")
-     * @Type("float")
      */
+    #[SerializedName('Volume')]
+    #[Type('float')]
     protected $volume;
 
     public function __construct () { }
@@ -48,7 +48,7 @@ class EGAIS
     /**
      * @param string $barcode
      */
-    public function setBarcode ( string $barcode )
+    public function setBarcode ( string $barcode ): void
     {
         $this->barcode = $barcode;
     }
@@ -64,7 +64,7 @@ class EGAIS
     /**
      * @param string $ean
      */
-    public function setEan ( string $ean )
+    public function setEan ( string $ean ): void
     {
         $this->ean = $ean;
     }
@@ -80,7 +80,7 @@ class EGAIS
     /**
      * @param float $volume
      */
-    public function setVolume ( float $volume )
+    public function setVolume ( float $volume ): void
     {
         $this->volume = $volume;
     }

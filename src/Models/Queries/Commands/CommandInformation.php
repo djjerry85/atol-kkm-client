@@ -12,17 +12,17 @@ use JMS\Serializer\Annotation\AccessType;
 /**
  * Class CommandInformation
  * @package KKMClient\Models\Queries\Commands
- * @AccessType("public_methods")
  */
+#[AccessType('public_methods')]
 class CommandInformation implements CommandInterface
 {
     use CommonCommandTrait;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("IdCommand")
      */
+    #[Type('string')]
+    #[SerializedName('IdCommand')]
     private $id;
 
     public function getName() :string
@@ -35,7 +35,7 @@ class CommandInformation implements CommandInterface
         return $this->id;
     }
 
-    public function setId(string $id = null)
+    public function setId(string $id = null): void
     {
         $this->id = $id;
     }

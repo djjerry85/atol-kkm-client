@@ -19,25 +19,16 @@ use KKMClient\Models\Queries\Enums\Commands;
 class QueriesFactory
 {
 
-    /**
-     * @var Serializer
-     */
-    protected $serializer;
+    protected \JMS\Serializer\Serializer $serializer;
 
-    /**
-     * @var JSON
-     */
-    protected $json;
+    protected \KHerGe\JSON\JSON $json;
 
     /**
      * @var array
      */
     protected $devices = [];
 
-    /**
-     * @var array
-     */
-    protected $commands = [];
+    protected array $commands;
 
     /**
      * @var string
@@ -51,9 +42,15 @@ class QueriesFactory
     public function __construct ( string $format = 'json' )
     {
         $this->serializer   = SerializerBuilder::create()
-            ->configureHandlers(function(HandlerRegistry $registry) {
+            ->configureHandlers(function(HandlerRegistry $registry): void {
                 $registry->registerSubscribingHandler(new CommandInformationHandler());
             })
+            /*->setPropertyNamingStrategy(
+                new \JMS\Serializer\Naming\SerializedNameAnnotationStrategy(
+                    new \JMS\Serializer\Naming\IdenticalPropertyNamingStrategy()
+                )
+            )*/
+            //->setDebug(true)
             ->build();
         $this->commands     = ReflectionFactory::getReflection(Commands::class)->getConstants();
         $this->json = new JSON();
@@ -78,7 +75,7 @@ class QueriesFactory
         return $queryObject;
     }
 
-    public function serializeCommand( CommandInterface $command )
+    public function serializeCommand( CommandInterface $command ): string
     {
         return $this->serializer->serialize($command, 'json');
     }
@@ -102,7 +99,7 @@ class QueriesFactory
         return $this->json->encode($attributes);
     }
 
-    protected function getCommandClassName($commandName)
+    protected function getCommandClassName(string $commandName): string
     {
         $class = "KKMClient\\Models\\Queries\\Commands\\".$commandName;
         if (!class_exists($class))

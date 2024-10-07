@@ -14,19 +14,16 @@ use KKMClient\Traits\CommonResponseTrait;
 /**
  * Class DeviceList
  * @package KKMClient\Models\Responses
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class DeviceList implements ResponseInterface
 {
     use CommonResponseTrait;
 
-    /**
-     * @var array
-     * @SerializedName("ListUnit")
-     * @Type("array<KKMClient\Models\Devices\Device>")
-     * @Accessor(getter="getDevices",setter="setDevices")
-     */
-    private $devices;
+    #[SerializedName('ListUnit')]
+    #[Type('array<KKMClient\Models\Devices\Device>')]
+    #[Accessor(getter: 'getDevices', setter: 'setDevices')]
+    private ?array $devices = null;
 
     /**
      * @return array
@@ -39,7 +36,7 @@ class DeviceList implements ResponseInterface
     /**
      * @param array $devices
      */
-    public function setDevices ( array $devices )
+    public function setDevices ( array $devices ): void
     {
         $this->devices = $devices;
     }
@@ -47,7 +44,7 @@ class DeviceList implements ResponseInterface
     /**
      * @param Device $device
      */
-    public function addDevice( Device $device )
+    public function addDevice( Device $device ): void
     {
         $this->devices[] = $device;
     }
@@ -67,7 +64,7 @@ class DeviceList implements ResponseInterface
     /**
      * @param $index
      */
-    public function removeDevice($index)
+    public function removeDevice($index): void
     {
         if(isset ($this->devices[$index])) {
             unset($this->devices[$index]);

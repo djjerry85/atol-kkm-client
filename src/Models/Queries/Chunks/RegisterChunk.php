@@ -11,72 +11,64 @@ use KKMClient\Models\Queries\Chunks\EGAIS;
 /**
  * Class RegisterChunk
  * @package KKMClient\Queries\Chunks
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class RegisterChunk
 {
     /**
      * @var string
-     * @SerializedName("Name")
-     * @Type("string")
-     * Наименование товара (64 символа)
      */
+    #[SerializedName('Name')]
+    #[Type('string')] // Наименование товара (64 символа)
     protected $name;
 
     /**
      * @var integer
-     * @SerializedName("Quantity")
-     * @Type("integer")
-     * Количество товара
      */
+    #[SerializedName('Quantity')]
+    #[Type('integer')] // Количество товара
     protected $quantity;
 
     /**
      * @var float
-     * @SerializedName("Price")
-     * @Type("float")
-     * Стоимость шт. без скидки
      */
+    #[SerializedName('Price')]
+    #[Type('float')] // Стоимость шт. без скидки
     protected $price;
 
     /**
      * @var float
-     * @SerializedName("Amount")
-     * @Type("float")
-     * Конечная сумма строки с учётом всех скидок/наценок
      */
+    #[SerializedName('Amount')]
+    #[Type('float')] // Конечная сумма строки с учётом всех скидок/наценок
     protected $amount;
 
     /**
      * @var integer
-     * @SerializedName("Department")
-     * @Type("integer")
-     * Отдел учёта.
      */
+    #[SerializedName('Department')]
+    #[Type('integer')] // Отдел учёта.
     protected $department;
 
     /**
      * @var integer
-     * @SerializedName("Tax")
-     * @Type("integer")
-     * Ставка НДС (%) / -1 НДС не облагается.
      */
+    #[SerializedName('Tax')]
+    #[Type('integer')] // Ставка НДС (%) / -1 НДС не облагается.
     protected $tax;
 
     /**
      * @var string
-     * @SerializedName("EAN13")
-     * @Type("string")
-     * Штрихкод EAN13 для передачи в ОФД (Не печатается)
      */
+    #[SerializedName('EAN13')]
+    #[Type('string')] // Штрихкод EAN13 для передачи в ОФД (Не печатается)
     protected $ean13;
 
     /**
      * @var \KKMClient\Models\Queries\Chunks\EGAIS
-     * @SerializedName("EGAIS")
-     * @Type("KKMClient\Models\Queries\Chunks\EGAIS")
-     * Данные для ЕГАИС.
      */
+    #[SerializedName('EGAIS')]
+    #[Type('KKMClient\Models\Queries\Chunks\EGAIS')] // Данные для ЕГАИС.
     protected $egais;
 
     public function __construct () { }
@@ -92,7 +84,7 @@ class RegisterChunk
     /**
      * @param string $name
      */
-    public function setName ( string $name )
+    public function setName ( string $name ): static
     {
         $this->name = $name;
         return $this;
@@ -109,7 +101,7 @@ class RegisterChunk
     /**
      * @param int $quantity
      */
-    public function setQuantity ( int $quantity )
+    public function setQuantity ( int $quantity ): static
     {
         $this->quantity = $quantity;
         return $this;
@@ -126,7 +118,7 @@ class RegisterChunk
     /**
      * @param float $price
      */
-    public function setPrice ( float $price )
+    public function setPrice ( float $price ): static
     {
         $this->price = $price;
         return $this;
@@ -143,7 +135,7 @@ class RegisterChunk
     /**
      * @param float $amount
      */
-    public function setAmount ( float $amount )
+    public function setAmount ( float $amount ): static
     {
         $this->amount = $amount;
         return $this;
@@ -160,7 +152,7 @@ class RegisterChunk
     /**
      * @param int $department
      */
-    public function setDepartment ( int $department )
+    public function setDepartment ( int $department ): void
     {
         $this->department = $department;
     }
@@ -176,7 +168,7 @@ class RegisterChunk
     /**
      * @param int $tax
      */
-    public function setTax ( int $tax )
+    public function setTax ( int $tax ): void
     {
         $this->tax = $tax;
     }
@@ -192,7 +184,7 @@ class RegisterChunk
     /**
      * @param string $ean13
      */
-    public function setEan13 ( string $ean13 )
+    public function setEan13 ( string $ean13 ): void
     {
         $this->ean13 = $ean13;
     }
@@ -208,7 +200,7 @@ class RegisterChunk
     /**
      * @param \KKMClient\Models\Queries\Chunks\EGAIS $egais
      */
-    public function setEgais ( EGAIS $egais )
+    public function setEgais ( EGAIS $egais ): void
     {
         $this->egais = $egais;
     }

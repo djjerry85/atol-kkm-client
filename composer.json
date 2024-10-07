@@ -16,14 +16,14 @@
         }
     },
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^8.1",
         "ramsey/uuid": "^4.1",
         "guzzlehttp/guzzle": "^7.0.1",
-        "jms/serializer": "^1.7",
+        "jms/serializer": "^3.30.0",
         "kherge/json": "^2.0",
         "doctrine/common": "^3.1"
     },
     "require-dev": {
-        "symfony/var-dumper": "^5.2"
+        "symfony/var-dumper": "*"
     }
 }

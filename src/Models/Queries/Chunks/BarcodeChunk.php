@@ -9,22 +9,22 @@ use JMS\Serializer\Annotation\AccessType;
 /**
  * Class BarcodeChunk
  * @package KKMClient\Queries\Chunks
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class BarcodeChunk
 {
     /**
      * @var string
-     * @SerializedName("BarcodeType")
-     * @Type("string")
      */
+    #[SerializedName('BarcodeType')]
+    #[Type('string')]
     protected $barcodeType;
 
     /**
      * @var string
-     * @SerializedName("Barcode")
-     * @Type("string")
      */
+    #[SerializedName('Barcode')]
+    #[Type('string')]
     protected $barcode;
 
     public function __construct () { }
@@ -40,7 +40,7 @@ class BarcodeChunk
     /**
      * @param string $barcodeType
      */
-    public function setBarcodeType ( string $barcodeType )
+    public function setBarcodeType ( string $barcodeType ): static
     {
         $this->barcodeType = $barcodeType;
         return $this;
@@ -57,7 +57,7 @@ class BarcodeChunk
     /**
      * @param string $barcode
      */
-    public function setBarcode ( string $barcode )
+    public function setBarcode ( string $barcode ): void
     {
         $this->barcode = $barcode;
     }

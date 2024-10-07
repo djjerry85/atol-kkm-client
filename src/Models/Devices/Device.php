@@ -10,160 +10,160 @@ use JMS\Serializer\Annotation\Type;
 /**
  * Class Device
  * @package KKMClient\Models\Devices
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class Device
 {
     /**
      * @var integer
-     * @SerializedName("NumDevice")
-     * @Accessor(getter="getDeviceNumber",setter="setDeviceNumber")
-     * @Type("integer")
      */
+    #[SerializedName('NumDevice')]
+    #[Accessor(getter: 'getDeviceNumber', setter: 'setDeviceNumber')]
+    #[Type('integer')]
     protected $deviceNumber;
 
     /**
      * @var string
-     * @SerializedName("IdDevice")
-     * @Accessor(getter="getDeviceId",setter="setDeviceId")
-     * @Type("string")
      */
+    #[SerializedName('IdDevice')]
+    #[Accessor(getter: 'getDeviceId', setter: 'setDeviceId')]
+    #[Type('string')]
     protected $deviceId;
 
     /**
      * @var boolean
-     * @SerializedName("OnOff")
-     * @Accessor(getter="getState",setter="setState")
-     * @Type("boolean")
      */
+    #[SerializedName('OnOff')]
+    #[Accessor(getter: 'getState', setter: 'setState')]
+    #[Type('boolean')]
     protected $state;
 
     /**
      * @var boolean
-     * @SerializedName("Active")
-     * @Accessor(getter="getStatus",setter="setStatus")
-     * @Type("boolean")
      */
+    #[SerializedName('Active')]
+    #[Accessor(getter: 'getStatus', setter: 'setStatus')]
+    #[Type('boolean')]
     protected $status;
 
     /**
      * @var string
-     * @SerializedName("TypeDevice")
-     * @Accessor(getter="getDeviceType",setter="setDeviceType")
-     * @Type("boolean")
      */
+    #[SerializedName('TypeDevice')]
+    #[Accessor(getter: 'getDeviceType', setter: 'setDeviceType')]
+    #[Type('boolean')]
     protected $deviceType;
 
     /**
      * @var string
-     * @SerializedName("IdDeviceType")
-     * @Accessor(getter="getDeviceTypeId",setter="setDeviceTypeId")
-     * @Type("string")
      */
+    #[SerializedName('IdDeviceType')]
+    #[Accessor(getter: 'getDeviceTypeId', setter: 'setDeviceTypeId')]
+    #[Type('string')]
     protected $deviceTypeId;
 
     /**
      * @var string
-     * @SerializedName("IP")
-     * @Accessor(getter="getIP",setter="setIP")
-     * @Type("string")
      */
+    #[SerializedName('IP')]
+    #[Accessor(getter: 'getIP', setter: 'setIP')]
+    #[Type('string')]
     protected $IP;
 
     /**
      * @var string
-     * @SerializedName("NameDevice")
-     * @Accessor(getter="getDeviceName",setter="setDeviceName")
-     * @Type("string")
      */
+    #[SerializedName('NameDevice')]
+    #[Accessor(getter: 'getDeviceName', setter: 'setDeviceName')]
+    #[Type('string')]
     protected $deviceName;
 
     /**
      * @var string
-     * @serializedName("KktNumber")
-     * @Accessor(getter="getKktNumber",setter="setKktNumber")
-     * @Type("string")
      */
+    #[serializedName('KktNumber')]
+    #[Accessor(getter: 'getKktNumber', setter: 'setKktNumber')]
+    #[Type('string')]
     protected $kktNumber;
 
     /**
      * @var string
-     * @SerializedName("INN")
-     * @Accessor(getter="getInn",setter="setInn")
-     * @Type("string")
      */
+    #[SerializedName('INN')]
+    #[Accessor(getter: 'getInn', setter: 'setInn')]
+    #[Type('string')]
     protected $inn;
 
     /**
      * @var string
-     * @SerializedName("TaxVariant")
-     * @Accessor(getter="getTax",setter="setTax")
-     * @Type("string")
      */
+    #[SerializedName('TaxVariant')]
+    #[Accessor(getter: 'getTax', setter: 'setTax')]
+    #[Type('string')]
     protected $tax;
 
     /**
      * @var string
-     * @SerializedName("AddDate")
-     * @Accessor(getter="getDateAdded",setter="setDateAdded")
-     * @Type("string")
      */
+    #[SerializedName('AddDate')]
+    #[Accessor(getter: 'getDateAdded', setter: 'setDateAdded')]
+    #[Type('string')]
     protected $dateAdded;
 
     /**
      * @var string
-     * @SerializedName("OFD_Error")
-     * @Accessor(getter="getOFDError",setter="setOFDError")
-     * @Type("string")
      */
+    #[SerializedName('OFD_Error')]
+    #[Accessor(getter: 'getOFDError', setter: 'setOFDError')]
+    #[Type('string')]
     protected $OFDError;
 
     /**
      * @var integer
-     * @SerializedName("OFD_NumErrorDoc")
-     * @Accessor(getter="getOFDNumErrorDoc",setter="setOFDNumErrorDoc")
-     * @Type("integer")
      */
+    #[SerializedName('OFD_NumErrorDoc')]
+    #[Accessor(getter: 'getOFDNumErrorDoc', setter: 'setOFDNumErrorDoc')]
+    #[Type('integer')]
     protected $OFDNumErrorDoc;
 
     /**
      * @var string
-     * @SerializedName("OFD_DateErrorDoc")
-     * @Accessor(getter="getOFDDateErrorDoc",setter="setOFDDateErrorDoc")
-     * @Type("string")
      */
+    #[SerializedName('OFD_DateErrorDoc')]
+    #[Accessor(getter: 'getOFDDateErrorDoc', setter: 'setOFDDateErrorDoc')]
+    #[Type('string')]
     protected $OFDDateErrorDoc;
 
     /**
      * @var string
-     * @SerializedName("FN_DateEnd")
-     * @Accessor(getter="getFNDateEnd",setter="setFNDateEnd")
-     * @Type("DateTime<'Y-m-d\TH:i:s'>")
      */
+    #[SerializedName('FN_DateEnd')]
+    #[Accessor(getter: 'getFNDateEnd', setter: 'setFNDateEnd')]
+    #[Type("DateTime<'Y-m-d\\TH:i:s'>")]
     protected $FNDateEnd;
 
     /**
      * @var boolean
-     * @SerializedName("FN_MemOverflow")
-     * @Accessor(getter="isFNMemOverflow",setter="setFNMemOverflow")
-     * @Type("boolean")
      */
+    #[SerializedName('FN_MemOverflow')]
+    #[Accessor(getter: 'isFNMemOverflow', setter: 'setFNMemOverflow')]
+    #[Type('boolean')]
     protected $FNMemOverflow;
 
     /**
      * @var boolean
-     * @SerializedName("FN_IsFiscal")
-     * @Accessor(getter="isFNIsFiscal",setter="setFNIsFiscal")
-     * @Type("boolean")
      */
+    #[SerializedName('FN_IsFiscal')]
+    #[Accessor(getter: 'isFNIsFiscal', setter: 'setFNIsFiscal')]
+    #[Type('boolean')]
     protected $FNIsFiscal;
 
     /**
      * @var boolean
-     * @SerializedName("PaperOver")
-     * @Accessor(getter="isOutOfPaper",setter="setOutOfPaper")
-     * @Type("boolean")
      */
+    #[SerializedName('PaperOver')]
+    #[Accessor(getter: 'isOutOfPaper', setter: 'setOutOfPaper')]
+    #[Type('boolean')]
     protected $outOfPaper;
 
     public function __construct () { }
@@ -179,7 +179,7 @@ class Device
     /**
      * @param int $deviceNumber
      */
-    public function setDeviceNumber ( int $deviceNumber )
+    public function setDeviceNumber ( int $deviceNumber ): void
     {
         $this->deviceNumber = $deviceNumber;
     }
@@ -195,7 +195,7 @@ class Device
     /**
      * @param string $deviceId
      */
-    public function setDeviceId ( string $deviceId )
+    public function setDeviceId ( string $deviceId ): void
     {
         $this->deviceId = $deviceId;
     }
@@ -211,7 +211,7 @@ class Device
     /**
      * @param bool $state
      */
-    public function setState ( bool $state )
+    public function setState ( bool $state ): void
     {
         $this->state = $state;
     }
@@ -227,7 +227,7 @@ class Device
     /**
      * @param bool $status
      */
-    public function setStatus ( bool $status )
+    public function setStatus ( bool $status ): void
     {
         $this->status = $status;
     }
@@ -243,7 +243,7 @@ class Device
     /**
      * @param string $deviceType
      */
-    public function setDeviceType ( string $deviceType )
+    public function setDeviceType ( string $deviceType ): void
     {
         $this->deviceType = $deviceType;
     }
@@ -259,7 +259,7 @@ class Device
     /**
      * @param string $deviceTypeId
      */
-    public function setDeviceTypeId ( string $deviceTypeId )
+    public function setDeviceTypeId ( string $deviceTypeId ): void
     {
         $this->deviceTypeId = $deviceTypeId;
     }
@@ -275,7 +275,7 @@ class Device
     /**
      * @param string $IP
      */
-    public function setIP ( string $IP )
+    public function setIP ( string $IP ): void
     {
         $this->IP = $IP;
     }
@@ -291,7 +291,7 @@ class Device
     /**
      * @param string $deviceName
      */
-    public function setDeviceName ( string $deviceName )
+    public function setDeviceName ( string $deviceName ): void
     {
         $this->deviceName = $deviceName;
     }
@@ -307,7 +307,7 @@ class Device
     /**
      * @param string $kktNumber
      */
-    public function setKktNumber ( string $kktNumber )
+    public function setKktNumber ( string $kktNumber ): void
     {
         $this->kktNumber = $kktNumber;
     }
@@ -323,7 +323,7 @@ class Device
     /**
      * @param string $inn
      */
-    public function setInn ( string $inn )
+    public function setInn ( string $inn ): void
     {
         $this->inn = $inn;
     }
@@ -339,7 +339,7 @@ class Device
     /**
      * @param string $tax
      */
-    public function setTax ( string $tax )
+    public function setTax ( string $tax ): void
     {
         $this->tax = $tax;
     }
@@ -355,7 +355,7 @@ class Device
     /**
      * @param string $dateAdded
      */
-    public function setDateAdded ( string $dateAdded )
+    public function setDateAdded ( string $dateAdded ): void
     {
         $this->dateAdded = $dateAdded;
     }
@@ -371,7 +371,7 @@ class Device
     /**
      * @param string $OFDError
      */
-    public function setOFDError ( string $OFDError )
+    public function setOFDError ( string $OFDError ): void
     {
         $this->OFDError = $OFDError;
     }
@@ -387,7 +387,7 @@ class Device
     /**
      * @param int $OFDNumErrorDoc
      */
-    public function setOFDNumErrorDoc ( int $OFDNumErrorDoc )
+    public function setOFDNumErrorDoc ( int $OFDNumErrorDoc ): void
     {
         $this->OFDNumErrorDoc = $OFDNumErrorDoc;
     }
@@ -403,7 +403,7 @@ class Device
     /**
      * @param string $OFDDateErrorDoc
      */
-    public function setOFDDateErrorDoc ( string $OFDDateErrorDoc )
+    public function setOFDDateErrorDoc ( string $OFDDateErrorDoc ): void
     {
         $this->OFDDateErrorDoc = $OFDDateErrorDoc;
     }
@@ -419,7 +419,7 @@ class Device
     /**
      * @param \DateTime $FNDateEnd
      */
-    public function setFNDateEnd ( \DateTime $FNDateEnd )
+    public function setFNDateEnd ( \DateTime $FNDateEnd ): void
     {
         $this->FNDateEnd = $FNDateEnd;
     }
@@ -435,7 +435,7 @@ class Device
     /**
      * @param bool $FNMemOverflow
      */
-    public function setFNMemOverflow ( bool $FNMemOverflow )
+    public function setFNMemOverflow ( bool $FNMemOverflow ): void
     {
         $this->FNMemOverflow = $FNMemOverflow;
     }
@@ -451,7 +451,7 @@ class Device
     /**
      * @param bool $FNIsFiscal
      */
-    public function setFNIsFiscal ( bool $FNIsFiscal )
+    public function setFNIsFiscal ( bool $FNIsFiscal ): void
     {
         $this->FNIsFiscal = $FNIsFiscal;
     }
@@ -467,7 +467,7 @@ class Device
     /**
      * @param bool $outOfPaper
      */
-    public function setOutOfPaper ( bool $outOfPaper )
+    public function setOutOfPaper ( bool $outOfPaper ): void
     {
         $this->outOfPaper = $outOfPaper;
     }

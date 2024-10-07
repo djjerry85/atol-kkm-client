@@ -15,133 +15,85 @@ use KKMClient\Traits\CommonCommandTrait;
 
 /**
  * Class RegisterCheck
- * @ExclusionPolicy("none")
  * @package KKMClient\Models\Queries\Commands
  */
+#[ExclusionPolicy('none')]
 class RegisterCheck implements CommandInterface
 {
     use CommonCommandTrait;
 
-    /**
-     * @var string
-     * @SerializedName("KktNumber")
-     * @Type("string")
-     * @Accessor(getter="getFactoryNumber",setter="setFactoryNumber")
-     */
-    private $factoryNumber = "";
+    #[SerializedName('KktNumber')]
+    #[Type('string')]
+    #[Accessor(getter: 'getFactoryNumber', setter: 'setFactoryNumber')]
+    private string $factoryNumber = "";
 
-    /**
-     * @var string
-     * @SerializedName("InnKkm")
-     * @Type("string")
-     * @AccessType("public_method")
-     * @Accessor(getter="getKkmInn",setter="setKkmInn")
-     */
-    private $kkmInn = "";
+    #[SerializedName('InnKkm')]
+    #[Type('string')]
+    #[AccessType(type: 'public_method')]
+    #[Accessor(getter: 'getKkmInn', setter: 'setKkmInn')]
+    private string $kkmInn = "";
 
-    /**
-     * @var boolean
-     * @SerializedName("IsFiscalCheck")
-     * @Type("boolean")
-     * @Accessor(getter="isFiscal",setter="setFiscal")
-     */
-    private $fiscal = false;
+    #[SerializedName('IsFiscalCheck')]
+    #[Type('boolean')]
+    #[Accessor(getter: 'isFiscal', setter: 'setFiscal')]
+    private bool $fiscal = false;
 
-    /**
-     * @var integer
-     * @SerializedName("TypeCheck")
-     * @Type("integer")
-     */
-    private $checkType;
+    #[SerializedName('TypeCheck')]
+    #[Type('integer')]
+    private ?int $checkType = null;
 
-    /**
-     * @var boolean
-     * @SerializedName("CancelOpenedCheck")
-     * @Type("boolean")
-     * @Accessor(getter="getOpenedCheckCancellation",setter="setOpenedCheckCancellation")
-     */
-    private $cancelOpenedCheck = false;
+    #[SerializedName('CancelOpenedCheck')]
+    #[Type('boolean')]
+    #[Accessor(getter: 'getOpenedCheckCancellation', setter: 'setOpenedCheckCancellation')]
+    private bool $cancelOpenedCheck = false;
 
-    /**
-     * @var boolean
-     * @SerializedName("NotPrint")
-     * @Type("boolean")
-     * @Accessor(getter="isPrint",setter="setPrint")
-     */
-    private $print = false;
+    #[SerializedName('NotPrint')]
+    #[Type('boolean')]
+    #[Accessor(getter: 'isPrint', setter: 'setPrint')]
+    private bool $print = false;
 
-    /**
-     * @var string
-     * @SerializedName("CashierName")
-     * @Type("string")
-     */
-    private $cashierName = '';
+    #[SerializedName('CashierName')]
+    #[Type('string')]
+    private string $cashierName = '';
 
-    /**
-     * @var string
-     * @SerializedName("ClientAddress")
-     * @Type("string")
-     * @Accessor(getter="getClientAddress",setter="setClientAddress")
-     */
-    private $clientAddress = '';
-    /**
-     * @var integer
-     * @SerializedName("TaxVariant")
-     * @Type("integer")
-     */
-    private $tax = 0;
+    #[SerializedName('ClientAddress')]
+    #[Type('string')]
+    #[Accessor(getter: 'getClientAddress', setter: 'setClientAddress')]
+    private string $clientAddress = '';
+    #[SerializedName('TaxVariant')]
+    #[Type('integer')]
+    private int $tax = 0;
 
-    /**
-     * @var array
-     * @SerializedName("CheckProps")
-     * @Type("array<KKMClient\Models\Queries\Chunks\CheckProperty>")
-     * @Accessor(getter="getProps",setter="setProps")
-     */
-    private $props = [];
+    #[SerializedName('CheckProps')]
+    #[Type('array<KKMClient\Models\Queries\Chunks\CheckProperty>')]
+    #[Accessor(getter: 'getProps', setter: 'setProps')]
+    private array $props = [];
 
-    /**
-     * @var array
-     * @SerializedName("AdditionalProps")
-     * @Type("array<KKMClient\Models\Queries\Chunks\AdditionalCheckProperty>")
-     * @Accessor(getter="getAdditionalProps",setter="setAdditionalProps")
-     */
-    private $additionalProps = [];
+    #[SerializedName('AdditionalProps')]
+    #[Type('array<KKMClient\Models\Queries\Chunks\AdditionalCheckProperty>')]
+    #[Accessor(getter: 'getAdditionalProps', setter: 'setAdditionalProps')]
+    private array $additionalProps = [];
 
-    /**
-     * @var array
-     * @SerializedName("CheckStrings")
-     * @Type("array<KKMClient\Models\Queries\Chunks\CheckString>")
-     * @Accessor(getter="getStrings",setter="setStrings")
-     */
-    private $strings = [];
+    #[SerializedName('CheckStrings')]
+    #[Type('array<KKMClient\Models\Queries\Chunks\CheckString>')]
+    #[Accessor(getter: 'getStrings', setter: 'setStrings')]
+    private array $strings = [];
 
-    /**
-     * @var float
-     * @SerializedName("Cash")
-     * @Type("float")
-     */
-    private $cash;
+    #[SerializedName('Cash')]
+    #[Type('float')]
+    private ?float $cash = null;
 
-    /**
-     * @var float
-     * @SerializedName("CashLessType1")
-     * @Type("float")
-     */
-    private $cashlessPayment1;
+    #[SerializedName('CashLessType1')]
+    #[Type('float')]
+    private ?float $cashlessPayment1 = null;
 
-    /**
-     * @var float
-     * @SerializedName("CashLessType2")
-     * @Type("float")
-     */
-    private $cashlessPayment2;
+    #[SerializedName('CashLessType2')]
+    #[Type('float')]
+    private ?float $cashlessPayment2 = null;
 
-    /**
-     * @var float
-     * @SerializedName("CashLessType3")
-     * @Type("float")
-     */
-    private $cashlessPayment3;
+    #[SerializedName('CashLessType3')]
+    #[Type('float')]
+    private ?float $cashlessPayment3 = null;
 
     public function getName () : string
     {
@@ -153,6 +105,7 @@ class RegisterCheck implements CommandInterface
      */
     public function getKkmInn (): string
     {
+        dump(1);
         return $this->kkmInn;
     }
 
@@ -160,7 +113,7 @@ class RegisterCheck implements CommandInterface
      * @param string $kkmInn
      * @return $this
      */
-    public function setKkmInn ( string $kkmInn )
+    public function setKkmInn ( string $kkmInn ): static
     {
         $this->kkmInn = $kkmInn;
         return $this;
@@ -178,7 +131,7 @@ class RegisterCheck implements CommandInterface
      * @param bool $isFiscal
      * @return $this
      */
-    public function setFiscal ( bool $isFiscal )
+    public function setFiscal ( bool $isFiscal ): static
     {
         $this->fiscal = $isFiscal;
         return $this;
@@ -196,7 +149,7 @@ class RegisterCheck implements CommandInterface
      * @param int $checkType
      * @return $this
      */
-    public function setCheckType ( int $checkType )
+    public function setCheckType ( int $checkType ): static
     {
         $this->checkType = $checkType;
         return $this;
@@ -214,7 +167,7 @@ class RegisterCheck implements CommandInterface
      * @param bool $cancelOpenedCheck
      * @return $this
      */
-    public function setOpenedCheckCancellation ( bool $cancelOpenedCheck )
+    public function setOpenedCheckCancellation ( bool $cancelOpenedCheck ): static
     {
         $this->cancelOpenedCheck = $cancelOpenedCheck;
         return $this;
@@ -232,7 +185,7 @@ class RegisterCheck implements CommandInterface
      * @param bool $print
      * @return $this
      */
-    public function setPrint ( bool $print )
+    public function setPrint ( bool $print ): static
     {
         $this->print = $print;
         return $this;
@@ -250,7 +203,7 @@ class RegisterCheck implements CommandInterface
      * @param string $cashierName
      * @return $this
      */
-    public function setCashierName ( string $cashierName )
+    public function setCashierName ( string $cashierName ): static
     {
         $this->cashierName = $cashierName;
         return $this;
@@ -268,7 +221,7 @@ class RegisterCheck implements CommandInterface
      * @param int $tax
      * @return $this
      */
-    public function setTax ( int $tax )
+    public function setTax ( int $tax ): static
     {
         $this->tax = $tax;
         return $this;
@@ -286,7 +239,7 @@ class RegisterCheck implements CommandInterface
      * @param array $additionalProps
      * @return $this
      */
-    public function setAdditionalProps ( array $additionalProps )
+    public function setAdditionalProps ( array $additionalProps ): static
     {
         $this->additionalProps = $additionalProps;
         return $this;
@@ -306,7 +259,7 @@ class RegisterCheck implements CommandInterface
      * @param array $props
      * @return $this
      */
-    public function setProps ( array $props )
+    public function setProps ( array $props ): static
     {
         $this->props = $props;
         return $this;
@@ -316,7 +269,7 @@ class RegisterCheck implements CommandInterface
      * @param CheckProperty $prop
      * @return $this
      */
-    public function addProp ( CheckProperty $prop )
+    public function addProp ( CheckProperty $prop ): static
     {
         $this->props[] = $prop;
         return $this;
@@ -334,7 +287,7 @@ class RegisterCheck implements CommandInterface
      * @param array $strings
      * @return $this
      */
-    public function setStrings ( array $strings )
+    public function setStrings ( array $strings ): static
     {
         $this->strings = $strings;
         return $this;
@@ -344,7 +297,7 @@ class RegisterCheck implements CommandInterface
      * @param CheckString $string
      * @return $this
      */
-    public function addString( CheckString $string )
+    public function addString( CheckString $string ): static
     {
         $this->strings[] = $string;
         return $this;
@@ -362,7 +315,7 @@ class RegisterCheck implements CommandInterface
      * @param float $cash
      * @return $this
      */
-    public function setCash ( float $cash )
+    public function setCash ( float $cash ): static
     {
         $this->cash = $cash;
         return $this;
@@ -380,7 +333,7 @@ class RegisterCheck implements CommandInterface
      * @param float $cashlessPayment1
      * @return $this
      */
-    public function setCashlessPayment1 ( float $cashlessPayment1 )
+    public function setCashlessPayment1 ( float $cashlessPayment1 ): static
     {
         $this->cashlessPayment1 = $cashlessPayment1;
         return $this;
@@ -398,7 +351,7 @@ class RegisterCheck implements CommandInterface
      * @param float $cashlessPayment2
      * @return $this
      */
-    public function setCashlessPayment2 ( float $cashlessPayment2 )
+    public function setCashlessPayment2 ( float $cashlessPayment2 ): static
     {
         $this->cashlessPayment2 = $cashlessPayment2;
         return $this;
@@ -416,7 +369,7 @@ class RegisterCheck implements CommandInterface
      * @param float $cashlessPayment3
      * @return $this
      */
-    public function setCashlessPayment3 ( float $cashlessPayment3 )
+    public function setCashlessPayment3 ( float $cashlessPayment3 ): static
     {
         $this->cashlessPayment3 = $cashlessPayment3;
         return $this;
@@ -434,7 +387,7 @@ class RegisterCheck implements CommandInterface
      * @param string $clientAddress
      * @return $this
      */
-    public function setClientAddress ( string $clientAddress )
+    public function setClientAddress ( string $clientAddress ): static
     {
         $this->clientAddress = $clientAddress;
         return $this;
@@ -452,7 +405,7 @@ class RegisterCheck implements CommandInterface
      * @param string $deviceNumber
      * @return $this
      */
-    public function setFactoryNumber ( string $deviceNumber )
+    public function setFactoryNumber ( string $deviceNumber ): static
     {
         $this->factoryNumber = $deviceNumber;
         return $this;

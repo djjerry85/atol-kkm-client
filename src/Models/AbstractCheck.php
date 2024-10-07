@@ -36,6 +36,7 @@ abstract class AbstractCheck
         $strings = $this->getTemplate()->getStrings();
         $this->command->setStrings($strings);
         $this->command->setDeviceNumber($this->deviceNumber);
+        $this->command->setTax(1);
 
         return $this->command;
     }

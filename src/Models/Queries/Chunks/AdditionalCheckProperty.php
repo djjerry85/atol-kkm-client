@@ -12,10 +12,10 @@ class AdditionalCheckProperty extends CheckProperty
 {
     /**
      * @var string
-     * @SerializedName("NameProp")
-     * @Accessor(getter="getPropName",setter="setPropName")
-     * @Type("string")
      */
+    #[SerializedName('NameProp')]
+    #[Accessor(getter: 'getPropName', setter: 'setPropName')]
+    #[Type('string')]
     protected $propName;
 
     public function __construct ()
@@ -34,7 +34,7 @@ class AdditionalCheckProperty extends CheckProperty
     /**
      * @param string $propName
      */
-    public function setPropName ( string $propName )
+    public function setPropName ( string $propName ): void
     {
         $this->propName = $propName;
     }

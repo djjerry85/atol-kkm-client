@@ -13,8 +13,8 @@ use KKMClient\Interfaces\ResponseInterface;
 /**
  * Class DeviceInfo
  * @package KKMClient\Models\Devices
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class DeviceInformation implements ResponseInterface
 {
     use CommonResponseTrait;
@@ -25,37 +25,37 @@ class DeviceInformation implements ResponseInterface
 
     /**
      * @var integer
-     * @SerializedName("CheckNumber")
-     * @Type("integer")
      */
+    #[SerializedName('CheckNumber')]
+    #[Type('integer')]
     protected $lastCheckNumber;
 
     /**
      * @var integer
-     * @SerializedName("SessionNumber")
-     * @Type("integer")
      */
+    #[SerializedName('SessionNumber')]
+    #[Type('integer')]
     protected $sessionNumber;
 
     /**
      * @var integer
-     * @SerializedName("LineLength")
-     * @Type("integer")
      */
+    #[SerializedName('LineLength')]
+    #[Type('integer')]
     protected $lineLength;
 
     /**
      * @var string
-     * @SerializedName("URL")
-     * @Type("string")
      */
+    #[SerializedName('URL')]
+    #[Type('string')]
     protected $url;
 
     /**
      * @var \KKMClient\Models\Responses\Chunks\InformationChunk
-     * @SerializedName("Info")
-     * @Type("KKMClient\Models\Responses\Chunks\InformationChunk")
      */
+    #[SerializedName('Info')]
+    #[Type('KKMClient\Models\Responses\Chunks\InformationChunk')]
     protected $information;
 
     /**
@@ -69,7 +69,7 @@ class DeviceInformation implements ResponseInterface
     /**
      * @param int $lastCheckNumber
      */
-    public function setLastCheckNumber ( int $lastCheckNumber )
+    public function setLastCheckNumber ( int $lastCheckNumber ): void
     {
         $this->lastCheckNumber = $lastCheckNumber;
     }
@@ -85,7 +85,7 @@ class DeviceInformation implements ResponseInterface
     /**
      * @param int $sessionNumber
      */
-    public function setSessionNumber ( int $sessionNumber )
+    public function setSessionNumber ( int $sessionNumber ): void
     {
         $this->sessionNumber = $sessionNumber;
     }
@@ -101,7 +101,7 @@ class DeviceInformation implements ResponseInterface
     /**
      * @param int $lineLength
      */
-    public function setLineLength ( int $lineLength )
+    public function setLineLength ( int $lineLength ): void
     {
         $this->lineLength = $lineLength;
     }
@@ -117,7 +117,7 @@ class DeviceInformation implements ResponseInterface
     /**
      * @param string $url
      */
-    public function setUrl ( string $url = '' )
+    public function setUrl ( string $url = '' ): void
     {
         $this->url = $url;
     }
@@ -133,7 +133,7 @@ class DeviceInformation implements ResponseInterface
     /**
      * @param Chunks\InformationChunk $information
      */
-    public function setInformation ( Chunks\InformationChunk $information )
+    public function setInformation ( Chunks\InformationChunk $information ): void
     {
         $this->information = $information;
     }

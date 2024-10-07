@@ -5,7 +5,7 @@ namespace Autoload;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 
 class Annotations {
-    public static function registry()
+    public static function registry(): void
     {
         $path = self::getPath();
         AnnotationRegistry::registerFile($path."/vendor/jms/serializer/src/JMS/Serializer/Annotation/SerializedName.php");
@@ -13,7 +13,7 @@ class Annotations {
             $path . "/vendor/jms/serializer/src");
     }
 
-    private static function getPath()
+    private static function getPath(): string
     {
         $basePath       =  dirname(dirname(dirname(__FILE__)));
         $projectRoot    = null;

@@ -17,35 +17,35 @@ trait CommonCommandTrait
 {
     /**
      * @var string
-     * @SerializedName("IdCommand")
-     * @Type("string")
-     * @Accessor(getter="getId",setter="setId")
      */
+    #[SerializedName('IdCommand')]
+    #[Type('string')]
+    #[Accessor(getter: 'getId', setter: 'setId')]
     private $id;
 
     /**
      * @var integer
-     * @SerializedName("NumDevice")
-     * @Type("integer")
-     * @AccessType("public_method")
-     * @Accessor(getter="getDeviceNumber",setter="setDeviceNumber")
      */
+    #[SerializedName('NumDevice')]
+    #[Type('integer')]
+    #[AccessType(type:'public_method')]
+    #[Accessor(getter: 'getDeviceNumber', setter: 'setDeviceNumber')]
     private $deviceNumber = 0;
 
     /**
      * @var string
-     * @SerializedName("Command")
-     * @Type("string")
-     * @Accessor(getter="getName",setter="setName")
      */
+    #[SerializedName('Command')]
+    #[Type('string')]
+    #[Accessor(getter: 'getName', setter: 'setName')]
     private $name;
 
     /**
      * @var integer
-     * @SerializedName("Timeout")
-     * @Type("integer")
-     * @Accessor(getter="getTimeOut",setter="setTimeout")
      */
+    #[SerializedName('Timeout')]
+    #[Type('integer')]
+    #[Accessor(getter: 'getTimeOut', setter: 'setTimeout')]
     private $timeout = 30;
 
     /**

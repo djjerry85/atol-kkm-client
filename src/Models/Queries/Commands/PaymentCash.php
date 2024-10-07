@@ -12,8 +12,8 @@ use JMS\Serializer\Annotation\SerializedName;
 /**
  * Class DepositingCash
  * @package KKMClient\Models\Queries\Commands
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class PaymentCash extends DepositingCash
 {
     public function getName (): string

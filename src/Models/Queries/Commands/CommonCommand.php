@@ -9,8 +9,8 @@ use JMS\Serializer\Annotation\AccessType;
 /**
  * Class Command
  * @package KKMClient\Queries
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class CommonCommand implements CommandInterface
 {
     use CommonCommandTrait;

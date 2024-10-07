@@ -22,7 +22,7 @@ class DeserializeEventSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function onPreDeserialize(PreDeserializeEvent $event)
+    public function onPreDeserialize(PreDeserializeEvent $event): void
     {
         $context    = $event->getContext();
         $visitor    = $event->getVisitor();
@@ -30,7 +30,7 @@ class DeserializeEventSubscriber implements EventSubscriberInterface
         $data       = $event->getData();
     }
 
-    public function onPostDeserialize(ObjectEvent $event)
+    public function onPostDeserialize(ObjectEvent $event): void
     {
         $object = $event->getObject();
     }

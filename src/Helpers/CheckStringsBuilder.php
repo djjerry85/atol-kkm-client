@@ -53,12 +53,12 @@ class CheckStringsBuilder
      * @param int $intensity
      * @return $this
      */
-    public function textCenter(string $text, $font = 0, $intensity = 0): self
+    public function textCenter(string $text, int $font = 0, $intensity = 0): self
     {
         return $this->text(">#2#<" . $text, $font, $intensity);
     }
 
-    public function twoColsText(array $cols, $font = 0, $intensity = 0): self
+    public function twoColsText(array $cols, int $font = 0, $intensity = 0): self
     {
         if (count($cols) != 2) {
             throw new BadConfigException("Параметр cols должен быть массивом с двумя элементами");
@@ -71,7 +71,7 @@ class CheckStringsBuilder
      * @param string $textContent
      * @return $this
      */
-    public function qrCode($textContent): self
+    public function qrCode(string $textContent): self
     {
         $barcode = new BarcodeChunk();
         $barcode->setBarcode($textContent);

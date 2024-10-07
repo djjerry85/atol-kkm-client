@@ -13,67 +13,52 @@ use JMS\Serializer\Annotation\SerializedName;
 /**
  * Class DeviceList
  * @package KKMClient\Models\Queries\Commands
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class DeviceList implements CommandInterface
 {
     use CommonCommandTrait;
 
-    /**
-     * @var bool
-     * @SerializedName("Active")
-     * @Type("boolean")
-     * @Accessor(getter="isActive",setter="setActive")
-     */
-    private $active = true;
+    #[SerializedName('Active')]
+    #[Type('boolean')]
+    #[Accessor(getter: 'isActive', setter: 'setActive')]
+    private bool $active = true;
 
     /**
      * @var bool|null
-     * @SerializedName("OnOff")
-     * @Accessor(getter="isDisabled",setter="setDisabled")
-     * @Type("boolean")
      */
+    #[SerializedName('OnOff')]
+    #[Accessor(getter: 'isDisabled', setter: 'setDisabled')]
+    #[Type('boolean')]
     private $disabled = null;
 
     /**
      * @var bool|null
-     * @SerializedName("OFD_Error")
-     * @Accessor(getter="hasOfdError",setter="setOfdError")
-     * @Type("boolean")
      */
+    #[SerializedName('OFD_Error')]
+    #[Accessor(getter: 'hasOfdError', setter: 'setOfdError')]
+    #[Type('boolean')]
     private $ofdError = null;
 
-    /**
-     * @var \DateTime|null
-     * @SerializedName("OFD_DateErrorDoc")
-     * @Accessor(getter="hasOfdError",setter="setOfdError")
-     * @Type("DateTime<'Y-m-dTH:i:s'>")
-     */
-    private $lastOfdErrorDate = null;
+    #[SerializedName('OFD_DateErrorDoc')]
+    #[Accessor(getter: 'hasOfdError', setter: 'setOfdError')]
+    #[Type("DateTime<'Y-m-dTH:i:s'>")]
+    private ?\DateTime $lastOfdErrorDate = null;
 
-    /**
-     * @var \DateTime|null
-     * @SerializedName("FN_DateEnd")
-     * @Accessor(getter="getLastFnDate",setter="setLastFnDate")
-     * @Type("DateTime<'Y-m-dTH:i:s'>")
-     */
-    private $lastFnDate = null;
+    #[SerializedName('FN_DateEnd')]
+    #[Accessor(getter: 'getLastFnDate', setter: 'setLastFnDate')]
+    #[Type("DateTime<'Y-m-dTH:i:s'>")]
+    private ?\DateTime $lastFnDate = null;
 
-    /**
-     * @var bool|null
-     * @SerializedName("FN_MemOverFlow")
-     * @Accessor(getter="hasMemoryOverflow",setter="setMemoryOverflow")
-     * @Type("boolean")
-     */
-    private $memoryOverflow = null;
+    #[SerializedName('FN_MemOverFlow')]
+    #[Accessor(getter: 'hasMemoryOverflow', setter: 'setMemoryOverflow')]
+    #[Type('boolean')]
+    private ?bool $memoryOverflow = null;
 
-    /**
-     * @var bool|null
-     * @SerializedName("FN_IsFiscal")
-     * @Accessor(getter="isFiscal",setter="setFiscal")
-     * @Type("boolean")
-     */
-    private $fiscal = null;
+    #[SerializedName('FN_IsFiscal')]
+    #[Accessor(getter: 'isFiscal', setter: 'setFiscal')]
+    #[Type('boolean')]
+    private ?bool $fiscal = null;
 
     /**
      * @return bool
@@ -86,7 +71,7 @@ class DeviceList implements CommandInterface
     /**
      * @param bool $active
      */
-    public function setActive ( bool $active )
+    public function setActive ( bool $active ): void
     {
         $this->active = $active;
     }
@@ -102,7 +87,7 @@ class DeviceList implements CommandInterface
     /**
      * @param bool|null $disabled
      */
-    public function setDisabled ( $disabled )
+    public function setDisabled ( $disabled ): void
     {
         $this->disabled = $disabled;
     }
@@ -118,7 +103,7 @@ class DeviceList implements CommandInterface
     /**
      * @param bool|null $ofdError
      */
-    public function setOfdError ( $ofdError )
+    public function setOfdError ( $ofdError ): void
     {
         $this->ofdError = $ofdError;
     }
@@ -134,7 +119,7 @@ class DeviceList implements CommandInterface
     /**
      * @param \DateTime|null $lastOfdErrorDate
      */
-    public function setLastOfdErrorDate ( \DateTime $lastOfdErrorDate = null )
+    public function setLastOfdErrorDate ( \DateTime $lastOfdErrorDate = null ): void
     {
         $this->lastOfdErrorDate = $lastOfdErrorDate;
     }
@@ -150,7 +135,7 @@ class DeviceList implements CommandInterface
     /**
      * @param \DateTime|null $lastFnDate
      */
-    public function setLastFnDate ( \DateTime $lastFnDate = null )
+    public function setLastFnDate ( \DateTime $lastFnDate = null ): void
     {
         $this->lastFnDate = $lastFnDate;
     }
@@ -166,7 +151,7 @@ class DeviceList implements CommandInterface
     /**
      * @param bool|null $memoryOverflow
      */
-    public function setMemoryOverflow ( bool $memoryOverflow = null )
+    public function setMemoryOverflow ( bool $memoryOverflow = null ): void
     {
         $this->memoryOverflow = $memoryOverflow;
     }
@@ -182,7 +167,7 @@ class DeviceList implements CommandInterface
     /**
      * @param bool|null $fiscal
      */
-    public function setFiscal ( bool $fiscal = null )
+    public function setFiscal ( bool $fiscal = null ): void
     {
         $this->fiscal = $fiscal;
     }

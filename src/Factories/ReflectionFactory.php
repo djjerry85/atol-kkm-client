@@ -10,7 +10,7 @@ class ReflectionFactory
      * @param string | \stdClass $class
      * @return ReflectionClass
      */
-    public static function getReflection( $class )
+    public static function getReflection( $class ): \ReflectionClass
     {
         return new ReflectionClass($class);
     }

@@ -2,6 +2,7 @@
 
 namespace KKMClient\Handlers;
 
+use JMS\Serializer\GraphNavigatorInterface;
 use JMS\Serializer\Handler\SubscribingHandlerInterface;
 use JMS\Serializer\GraphNavigator;
 use JMS\Serializer\JsonDeserializationVisitor;
@@ -33,7 +34,7 @@ class CommandInformationHandler implements SubscribingHandlerInterface
     {
         return [
             [
-                'direction' => GraphNavigator::DIRECTION_DESERIALIZATION,
+                'direction' => GraphNavigatorInterface::DIRECTION_DESERIALIZATION,
                 'format'    => 'json',
                 'type'      => CommandInformation::class,
                 'method'    => 'getResultingObjectClass'
@@ -43,7 +44,7 @@ class CommandInformationHandler implements SubscribingHandlerInterface
 
     public function getResultingObjectClass(
         JsonDeserializationVisitor $visitor,
-        $object,
+        array $object,
         array $type,
         Context $context
     )

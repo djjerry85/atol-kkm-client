@@ -36,7 +36,7 @@ class ClientMainCheck extends AbstractCheck
             ->textCenter("*** 0077-10 ***", 1, 1)
             ->emptyLines(2)
 
-            ->twoColsText(["Состав заказа", "12.03.2020 12:00"])
+            ->twoColsText(["Состав заказа", date('d.m.Y H:i')])
 
             ->emptyLines(1)
             ->lineSeparator('-')

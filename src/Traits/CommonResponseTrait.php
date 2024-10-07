@@ -17,23 +17,23 @@ trait CommonResponseTrait
 {
     /**
      * @var string
-     * @SerializedName("Command")
-     * @Type("string")
      */
+    #[SerializedName('Command')]
+    #[Type('string')]
     private $name;
 
     /**
      * @var string
-     * @SerializedName("Error")
-     * @Type("string")
      */
+    #[SerializedName('Error')]
+    #[Type('string')]
     private $error;
 
     /**
      * @var integer
-     * @SerializedName("Status")
-     * @Type("integer")
      */
+    #[SerializedName('Status')]
+    #[Type('integer')]
     private $status;
 
     /**
@@ -47,7 +47,7 @@ trait CommonResponseTrait
     /**
      * @param string $name
      */
-    public function setName ( string $name )
+    public function setName ( string $name ): void
     {
         $this->name = $name;
     }
@@ -63,7 +63,7 @@ trait CommonResponseTrait
     /**
      * @param string $error
      */
-    public function setError ( string $error = "" )
+    public function setError ( string $error = "" ): void
     {
         $this->error = $error;
     }
@@ -79,7 +79,7 @@ trait CommonResponseTrait
     /**
      * @param int $status
      */
-    public function setStatus ( int $status )
+    public function setStatus ( int $status ): void
     {
         $this->status = $status;
     }

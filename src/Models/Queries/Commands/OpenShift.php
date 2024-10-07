@@ -13,8 +13,8 @@ use JMS\Serializer\Annotation\Accessor;
 /**
  * Class OpenShift
  * @package KKMClient\Models\Queries\Commands
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class OpenShift implements CommandInterface
 {
     use CommonCommandTrait;

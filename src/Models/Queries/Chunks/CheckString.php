@@ -10,36 +10,36 @@ use KKMClient\Models\Queries\Chunks\PrintTextChunk;
 /**
  * Class CheckString
  * @package KKMClient\Queries
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class CheckString
 {
     /**
      * @var \KKMClient\Models\Queries\Chunks\PrintTextChunk|null
-     * @SerializedName("PrintText")
-     * @Type("KKMClient\Models\Queries\Chunks\PrintTextChunk")
      */
+    #[SerializedName('PrintText')]
+    #[Type('KKMClient\Models\Queries\Chunks\PrintTextChunk')]
     protected $printText;
 
     /**
      * @var \KKMClient\Models\Queries\Chunks\RegisterChunk|null
-     * @SerializedName("Register")
-     * @Type("KKMClient\Models\Queries\Chunks\RegisterChunk")
      */
+    #[SerializedName('Register')]
+    #[Type('KKMClient\Models\Queries\Chunks\RegisterChunk')]
     protected $register;
 
     /**
      * @var \KKMClient\Models\Queries\Chunks\BarcodeChunk|null
-     * @SerializedName("BarCode")
-     * @Type("KKMClient\Models\Queries\Chunks\BarcodeChunk")
      */
+    #[SerializedName('BarCode')]
+    #[Type('KKMClient\Models\Queries\Chunks\BarcodeChunk')]
     protected $barcode;
 
     /**
      * @var \KKMClient\Models\Queries\Chunks\ImageChunk|null
-     * @SerializedName("PrintImage")
-     * @Type("KKMClient\Models\Queries\Chunks\ImageChunk")
      */
+    #[SerializedName('PrintImage')]
+    #[Type('KKMClient\Models\Queries\Chunks\ImageChunk')]
     protected $printImage;
 
     public function __construct () { }
@@ -55,7 +55,7 @@ class CheckString
     /**
      * @param \KKMClient\Models\Queries\Chunks\PrintTextChunk $printText
      */
-    public function setPrintText ( PrintTextChunk $printText )
+    public function setPrintText ( PrintTextChunk $printText ): static
     {
         $this->printText = $printText;
         return $this;
@@ -72,7 +72,7 @@ class CheckString
     /**
      * @param RegisterChunk|null $register
      */
-    public function setRegister ( $register )
+    public function setRegister ( $register ): void
     {
         $this->register = $register;
     }
@@ -88,7 +88,7 @@ class CheckString
     /**
      * @param BarcodeChunk|null $barcode
      */
-    public function setBarcode ( $barcode )
+    public function setBarcode ( $barcode ): static
     {
         $this->barcode = $barcode;
         return $this;

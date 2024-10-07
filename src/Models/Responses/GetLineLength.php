@@ -11,17 +11,17 @@ use JMS\Serializer\Annotation\AccessType;
 /**
  * Class GetLineLength
  * @package KKMClient\Models\Responses
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class GetLineLength implements ResponseInterface
 {
     use CommonResponseTrait;
 
     /**
      * @var int
-     * @SerializedName("LineLength")
-     * @Type("integer")
      */
+    #[SerializedName('LineLength')]
+    #[Type('integer')]
     protected $length = 0;
 
     public function getLength() : int
@@ -29,7 +29,7 @@ class GetLineLength implements ResponseInterface
         return $this->length;
     }
 
-    public function setLength( int $length )
+    public function setLength( int $length ): void
     {
         $this->length = $length;
     }

@@ -11,190 +11,190 @@ use JMS\Serializer\Annotation\Accessor;
 /**
  * Class InformationChunk
  * @package KKMClient\Models\Devices\Chunks
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class InformationChunk
 {
     /**
      * @var string
-     * @SerializedName("UrlServerOfd")
-     * @Type("string")
      */
+    #[SerializedName('UrlServerOfd')]
+    #[Type('string')]
     protected $ofdServer;
 
     /**
      * @var string
-     * @SerializedName("PortServerOfd")
-     * @Type("string")
      */
+    #[SerializedName('PortServerOfd')]
+    #[Type('string')]
     protected $ofdServerPort;
 
     /**
      * @var string
-     * @SerializedName("NameOFD")
-     * @Type("string")
      */
+    #[SerializedName('NameOFD')]
+    #[Type('string')]
     protected $ofdName;
 
     /**
      * @var string
-     * @SerializedName("UrlOfd")
-     * @Type("string")
      */
+    #[SerializedName('UrlOfd')]
+    #[Type('string')]
     protected $ofdUrl;
 
     /**
      * @var string
-     * @SerializedName("InnOfd")
-     * @Type("string")
      */
+    #[SerializedName('InnOfd')]
+    #[Type('string')]
     protected $ofdTIN;
 
     /**
      * @var string
-     * @SerializedName("NameOrganization")
-     * @Type("string")
      */
+    #[SerializedName('NameOrganization')]
+    #[Type('string')]
     protected $ownerName;
 
     /**
      * @var string
-     * @SerializedName("TaxVariant")
-     * @Type("string")
      */
+    #[SerializedName('TaxVariant')]
+    #[Type('string')]
     protected $taxVariant;
 
     /**
      * @var string
-     * @SerializedName("AddressSettle")
-     * @Type("string")
      */
+    #[SerializedName('AddressSettle')]
+    #[Type('string')]
     protected $ownerAddress;
 
     /**
      * @var bool
-     * @SerializedName("EncryptionMode")
-     * @Type("boolean")
-     * @Accessor(getter="isEncryptionModeEnabled",setter="setEncryptionMode")
      */
+    #[SerializedName('EncryptionMode')]
+    #[Type('boolean')]
+    #[Accessor(getter: 'isEncryptionModeEnabled', setter: 'setEncryptionMode')]
     protected $encryptionMode;
 
     /**
      * @var bool
-     * @SerializedName("OfflineMode")
-     * @Type("boolean")
-     * @Accessor(getter="isOfflineModeEnabled",setter="setOfflineMode")
      */
+    #[SerializedName('OfflineMode')]
+    #[Type('boolean')]
+    #[Accessor(getter: 'isOfflineModeEnabled', setter: 'setOfflineMode')]
     protected $offlineMode;
 
     /**
      * @var bool
-     * @SerializedName("AutomaticMode")
-     * @Type("boolean")
-     * @Accessor(getter="isAutomaticModeEnabled",setter="setAutomaticMode")
      */
+    #[SerializedName('AutomaticMode')]
+    #[Type('boolean')]
+    #[Accessor(getter: 'isAutomaticModeEnabled', setter: 'setAutomaticMode')]
     protected $automaticMode;
 
     /**
      * @var bool
-     * @SerializedName("InternetMode")
-     * @Type("boolean")
-     * @Accessor(getter="isInternetModeEnabled",setter="setInternetMode")
      */
+    #[SerializedName('InternetMode')]
+    #[Type('boolean')]
+    #[Accessor(getter: 'isInternetModeEnabled', setter: 'setInternetMode')]
     protected $internetMode;
 
     /**
      * @var bool
-     * @SerializedName("BSOMode")
-     * @Type("boolean")
-     * @Accessor(getter="isBSOModeEnabled",setter="setBSOMode")
      */
+    #[SerializedName('BSOMode')]
+    #[Type('boolean')]
+    #[Accessor(getter: 'isBSOModeEnabled', setter: 'setBSOMode')]
     protected $BSOMode;
 
     /**
      * @var bool
-     * @SerializedName("ServiceMode")
-     * @Type("boolean")
-     * @Accessor(getter="isServiceModeEnabled",setter="setServiceMode")
      */
+    #[SerializedName('ServiceMode')]
+    #[Type('boolean')]
+    #[Accessor(getter: 'isServiceModeEnabled', setter: 'setServiceMode')]
     protected $serviceMode;
 
     /**
      * @var string
-     * @SerializedName("InnOrganization")
-     * @Type("string")
      */
+    #[SerializedName('InnOrganization')]
+    #[Type('string')]
     protected $ownerTIN;
 
     /**
      * @var string
-     * @SerializedName("KktNumber")
-     * @Type("string")
      */
+    #[SerializedName('KktNumber')]
+    #[Type('string')]
     protected $kktNumber;
 
     /**
      * @var string
-     * @SerializedName("FnNumber")
-     * @Type("string")
      */
+    #[SerializedName('FnNumber')]
+    #[Type('string')]
     protected $fnNumber;
 
     /**
      * @var string
-     * @SerializedName("RegNumber")
-     * @Type("string")
      */
+    #[SerializedName('RegNumber')]
+    #[Type('string')]
     protected $regNumber;
 
     /**
      * @var string
-     * @SerializedName("Command")
-     * @Type("string")
      */
+    #[SerializedName('Command')]
+    #[Type('string')]
     protected $command;
 
     /**
      * @var bool
-     * @SerializedName("FN_IsFiscal")
-     * @Type("boolean")
-     * @Accessor(getter="isFiscal",setter="setFiscal")
      */
+    #[SerializedName('FN_IsFiscal')]
+    #[Type('boolean')]
+    #[Accessor(getter: 'isFiscal', setter: 'setFiscal')]
     protected $isFiscal;
 
     /**
      * @var string
-     * @SerializedName("OFD_Error")
-     * @Type("string")
      */
+    #[SerializedName('OFD_Error')]
+    #[Type('string')]
     protected $ofdError;
 
     /**
      * @var integer
-     * @SerializedName("OFD_NumErrorDoc")
-     * @Type("integer")
      */
+    #[SerializedName('OFD_NumErrorDoc')]
+    #[Type('integer')]
     protected $ofdErrorDocNumber;
 
     /**
      * @var \DateTime
-     * @SerializedName("OFD_DateErrorDoc")
-     * @Type("DateTime<'Y-m-d\TH:i:s'>")
      */
+    #[SerializedName('OFD_DateErrorDoc')]
+    #[Type("DateTime<'Y-m-d\\TH:i:s'>")]
     protected $ofdErrorDocDate;
 
     /**
      * @var \DateTime
-     * @SerializedName("FN_DateEnd")
-     * @Type("DateTime<'Y-m-d\TH:i:s'>")
      */
+    #[SerializedName('FN_DateEnd')]
+    #[Type("DateTime<'Y-m-d\\TH:i:s'>")]
     protected $fnRegistrationEndingDate;
 
     /**
      * @var integer
-     * @SerializedName("SessionState")
-     * @Type("integer")
      */
+    #[SerializedName('SessionState')]
+    #[Type('integer')]
     protected $sessionState;
 
     /**
@@ -208,7 +208,7 @@ class InformationChunk
     /**
      * @param string $ofdServer
      */
-    public function setOfdServer ( string $ofdServer )
+    public function setOfdServer ( string $ofdServer ): void
     {
         $this->ofdServer = $ofdServer;
     }
@@ -224,7 +224,7 @@ class InformationChunk
     /**
      * @param string $ofdServerPort
      */
-    public function setOfdServerPort ( string $ofdServerPort )
+    public function setOfdServerPort ( string $ofdServerPort ): void
     {
         $this->ofdServerPort = $ofdServerPort;
     }
@@ -240,7 +240,7 @@ class InformationChunk
     /**
      * @param string $ofdName
      */
-    public function setOfdName ( string $ofdName )
+    public function setOfdName ( string $ofdName ): void
     {
         $this->ofdName = $ofdName;
     }
@@ -256,7 +256,7 @@ class InformationChunk
     /**
      * @param string $ofdUrl
      */
-    public function setOfdUrl ( string $ofdUrl )
+    public function setOfdUrl ( string $ofdUrl ): void
     {
         $this->ofdUrl = $ofdUrl;
     }
@@ -272,7 +272,7 @@ class InformationChunk
     /**
      * @param string $ofdTIN
      */
-    public function setOfdTIN ( string $ofdTIN )
+    public function setOfdTIN ( string $ofdTIN ): void
     {
         $this->ofdTIN = $ofdTIN;
     }
@@ -288,7 +288,7 @@ class InformationChunk
     /**
      * @param string $ownerName
      */
-    public function setOwnerName ( string $ownerName )
+    public function setOwnerName ( string $ownerName ): void
     {
         $this->ownerName = $ownerName;
     }
@@ -304,7 +304,7 @@ class InformationChunk
     /**
      * @param string $taxVariant
      */
-    public function setTaxVariant ( string $taxVariant )
+    public function setTaxVariant ( string $taxVariant ): void
     {
         $this->taxVariant = $taxVariant;
     }
@@ -320,7 +320,7 @@ class InformationChunk
     /**
      * @param string $ownerAddress
      */
-    public function setOwnerAddress ( string $ownerAddress )
+    public function setOwnerAddress ( string $ownerAddress ): void
     {
         $this->ownerAddress = $ownerAddress;
     }
@@ -336,7 +336,7 @@ class InformationChunk
     /**
      * @param bool $encryptionMode
      */
-    public function setEncryptionMode ( bool $encryptionMode )
+    public function setEncryptionMode ( bool $encryptionMode ): void
     {
         $this->encryptionMode = $encryptionMode;
     }
@@ -352,7 +352,7 @@ class InformationChunk
     /**
      * @param bool $offlineMode
      */
-    public function setOfflineMode ( bool $offlineMode )
+    public function setOfflineMode ( bool $offlineMode ): void
     {
         $this->offlineMode = $offlineMode;
     }
@@ -368,7 +368,7 @@ class InformationChunk
     /**
      * @param bool $automaticMode
      */
-    public function setAutomaticMode ( bool $automaticMode )
+    public function setAutomaticMode ( bool $automaticMode ): void
     {
         $this->automaticMode = $automaticMode;
     }
@@ -384,7 +384,7 @@ class InformationChunk
     /**
      * @param bool $internetMode
      */
-    public function setInternetMode ( bool $internetMode )
+    public function setInternetMode ( bool $internetMode ): void
     {
         $this->internetMode = $internetMode;
     }
@@ -400,7 +400,7 @@ class InformationChunk
     /**
      * @param bool $BSOMode
      */
-    public function setBSOMode ( bool $BSOMode )
+    public function setBSOMode ( bool $BSOMode ): void
     {
         $this->BSOMode = $BSOMode;
     }
@@ -416,7 +416,7 @@ class InformationChunk
     /**
      * @param bool $serviceMode
      */
-    public function setServiceMode ( bool $serviceMode )
+    public function setServiceMode ( bool $serviceMode ): void
     {
         $this->serviceMode = $serviceMode;
     }
@@ -432,7 +432,7 @@ class InformationChunk
     /**
      * @param string $ownerTIN
      */
-    public function setOwnerTIN ( string $ownerTIN )
+    public function setOwnerTIN ( string $ownerTIN ): void
     {
         $this->ownerTIN = $ownerTIN;
     }
@@ -448,7 +448,7 @@ class InformationChunk
     /**
      * @param string $kktNumber
      */
-    public function setKktNumber ( string $kktNumber )
+    public function setKktNumber ( string $kktNumber ): void
     {
         $this->kktNumber = $kktNumber;
     }
@@ -464,7 +464,7 @@ class InformationChunk
     /**
      * @param string $fnNumber
      */
-    public function setFnNumber ( string $fnNumber )
+    public function setFnNumber ( string $fnNumber ): void
     {
         $this->fnNumber = $fnNumber;
     }
@@ -480,7 +480,7 @@ class InformationChunk
     /**
      * @param string $regNumber
      */
-    public function setRegNumber ( string $regNumber )
+    public function setRegNumber ( string $regNumber ): void
     {
         $this->regNumber = $regNumber;
     }
@@ -496,7 +496,7 @@ class InformationChunk
     /**
      * @param string $command
      */
-    public function setCommand ( string $command )
+    public function setCommand ( string $command ): void
     {
         $this->command = $command;
     }
@@ -512,7 +512,7 @@ class InformationChunk
     /**
      * @param bool $isFiscal
      */
-    public function setFiscal ( bool $isFiscal )
+    public function setFiscal ( bool $isFiscal ): void
     {
         $this->isFiscal = $isFiscal;
     }
@@ -528,7 +528,7 @@ class InformationChunk
     /**
      * @param string $ofdError
      */
-    public function setOfdError ( string $ofdError )
+    public function setOfdError ( string $ofdError ): void
     {
         $this->ofdError = $ofdError;
     }
@@ -544,7 +544,7 @@ class InformationChunk
     /**
      * @param int $ofdErrorDocNumber
      */
-    public function setOfdErrorDocNumber ( int $ofdErrorDocNumber )
+    public function setOfdErrorDocNumber ( int $ofdErrorDocNumber ): void
     {
         $this->ofdErrorDocNumber = $ofdErrorDocNumber;
     }
@@ -560,7 +560,7 @@ class InformationChunk
     /**
      * @param \DateTime $ofdErrorDocDate
      */
-    public function setOfdErrorDocDate ( \DateTime $ofdErrorDocDate )
+    public function setOfdErrorDocDate ( \DateTime $ofdErrorDocDate ): void
     {
         $this->ofdErrorDocDate = $ofdErrorDocDate;
     }
@@ -576,7 +576,7 @@ class InformationChunk
     /**
      * @param \DateTime $fnRegistrationEndingDate
      */
-    public function setFnRegistrationEndingDate ( \DateTime $fnRegistrationEndingDate )
+    public function setFnRegistrationEndingDate ( \DateTime $fnRegistrationEndingDate ): void
     {
         $this->fnRegistrationEndingDate = $fnRegistrationEndingDate;
     }
@@ -592,7 +592,7 @@ class InformationChunk
     /**
      * @param int $sessionState
      */
-    public function setSessionState ( int $sessionState )
+    public function setSessionState ( int $sessionState ): void
     {
         $this->sessionState = $sessionState;
     }

@@ -13,22 +13,16 @@ use Autoload\Annotations;
  * @package KKMClient
  * Позволяет совершать запросы к серверу ККМ
  */
-class Client
+class Client implements KKMClient
 {
     /**
      * @var Http
      */
-    private $http;
+    private \GuzzleHttp\Client $http;
 
-    /**
-     * @var string
-     */
-    private $url;
+    private string $url;
 
-    /**
-     * @var QueriesFactory
-     */
-    private $factory;
+    private \KKMClient\Factories\QueriesFactory $factory;
 
     /**
      * Client constructor.
@@ -69,7 +63,7 @@ class Client
         ];
         $this->http = new Http($config);
         $this->factory = new QueriesFactory();
-        Annotations::registry();
+        //Annotations::registry();
     }
 
     /**
@@ -91,6 +85,8 @@ class Client
         if(!$command->getName())
             throw new UnknownKKMCommand($command);
         $serializedCommand = $this->factory->serializeCommand($command);
+
+
 
         //echo $serializedCommand; exit;
 

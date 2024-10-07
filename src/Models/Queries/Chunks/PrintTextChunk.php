@@ -10,29 +10,29 @@ use JMS\Serializer\Annotation\AccessType;
 /**
  * Class PrintTextChunk
  * @package KKMClient\Queries\Chunks
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class PrintTextChunk
 {
     /**
      * @var string
-     * @SerializedName("Text")
-     * @Type("string")
      */
+    #[SerializedName('Text')]
+    #[Type('string')]
     protected $text;
 
     /**
      * @var integer
-     * @SerializedName("Font")
-     * @Type("integer")
      */
+    #[SerializedName('Font')]
+    #[Type('integer')]
     protected $font;
 
     /**
      * @var integer
-     * @SerializedName("Intensity")
-     * @Type("integer")
      */
+    #[SerializedName('Intensity')]
+    #[Type('integer')]
     protected $intensity;
 
     public function __construct () { }
@@ -48,7 +48,7 @@ class PrintTextChunk
     /**
      * @param string $text
      */
-    public function setText ( string $text )
+    public function setText ( string $text ): static
     {
         $this->text = $text;
         return $this;
@@ -65,7 +65,7 @@ class PrintTextChunk
     /**
      * @param int $font
      */
-    public function setFont ( int $font )
+    public function setFont ( int $font ): static
     {
         $this->font = $font;
         return $this;
@@ -82,7 +82,7 @@ class PrintTextChunk
     /**
      * @param int $intensity
      */
-    public function setIntensity ( int $intensity )
+    public function setIntensity ( int $intensity ): static
     {
         $this->intensity = $intensity;
         return $this;

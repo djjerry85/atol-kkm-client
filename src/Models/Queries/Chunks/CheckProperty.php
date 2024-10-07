@@ -10,38 +10,38 @@ use JMS\Serializer\Annotation\Type;
 /**
  * Class CheckProperty
  * @package KKMClient\Queries
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class CheckProperty
 {
     /**
      * @var boolean
-     * @SerializedName("Print")
-     * @Accessor(getter="isPrint",setter="setPrint")
-     * @Type("boolean")
      */
+    #[SerializedName('Print')]
+    #[Accessor(getter: 'isPrint', setter: 'setPrint')]
+    #[Type('boolean')]
     protected $print;
 
     /**
      * @var boolean
-     * @SerializedName("PrintInHeader")
-     * @Accessor(getter="isPrintInHeader",setter="setPrintInHeader")
-     * @Type("boolean")
      */
+    #[SerializedName('PrintInHeader')]
+    #[Accessor(getter: 'isPrintInHeader', setter: 'setPrintInHeader')]
+    #[Type('boolean')]
     protected $printInHeader;
 
     /**
      * @var integer
-     * @SerializedName("Teg")
-     * @Type("integer")
      */
+    #[SerializedName('Teg')]
+    #[Type('integer')]
     protected $tag;
 
     /**
      * @var string
-     * @SerializedName("Prop")
-     * @Type("string")
      */
+    #[SerializedName('Prop')]
+    #[Type('string')]
     protected $value;
 
     public function __construct ()
@@ -60,7 +60,7 @@ class CheckProperty
     /**
      * @param bool $print
      */
-    public function setPrint ( bool $print )
+    public function setPrint ( bool $print ): void
     {
         $this->print = $print;
     }
@@ -76,7 +76,7 @@ class CheckProperty
     /**
      * @param bool $printInHeader
      */
-    public function setPrintInHeader ( bool $printInHeader )
+    public function setPrintInHeader ( bool $printInHeader ): void
     {
         $this->printInHeader = $printInHeader;
     }
@@ -92,7 +92,7 @@ class CheckProperty
     /**
      * @param int $tag
      */
-    public function setTag ( int $tag )
+    public function setTag ( int $tag ): void
     {
         $this->tag = $tag;
     }
@@ -108,7 +108,7 @@ class CheckProperty
     /**
      * @param string $value
      */
-    public function setValue ( string $value )
+    public function setValue ( string $value ): void
     {
         $this->value = $value;
     }

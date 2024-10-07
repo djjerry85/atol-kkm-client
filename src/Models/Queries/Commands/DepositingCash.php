@@ -12,18 +12,18 @@ use JMS\Serializer\Annotation\SerializedName;
 /**
  * Class DepositingCash
  * @package KKMClient\Models\Queries\Commands
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class DepositingCash implements CommandInterface
 {
     use CommonCommandTrait;
 
     /**
      * @var float
-     * @SerializedName("Amount")
-     * @Type("float")
      */
-    private $amount;
+    #[SerializedName('Amount')]
+    #[Type('float')]
+    private float $amount;
 
     /**
      * @return float
@@ -36,7 +36,7 @@ class DepositingCash implements CommandInterface
     /**
      * @param float $amount
      */
-    public function setAmount ( float $amount )
+    public function setAmount ( float $amount ): void
     {
         $this->amount = $amount;
     }

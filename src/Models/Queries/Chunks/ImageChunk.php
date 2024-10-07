@@ -10,16 +10,16 @@ use JMS\Serializer\Annotation\AccessType;
 /**
  * Class ImageChunk
  * @package KKMClient\Queries\Chunks
- * @AccessType("public_method")
  */
+#[AccessType(type:'public_method')]
 class ImageChunk
 {
 
     /**
      * @var string
-     * @SerializedName("Image")
-     * @Type("string")
      */
+    #[SerializedName('Image')]
+    #[Type('string')]
     protected $image;
 
 
