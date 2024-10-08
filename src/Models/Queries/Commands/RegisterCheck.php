@@ -105,7 +105,6 @@ class RegisterCheck implements CommandInterface
      */
     public function getKkmInn (): string
     {
-        dump(1);
         return $this->kkmInn;
     }
 
