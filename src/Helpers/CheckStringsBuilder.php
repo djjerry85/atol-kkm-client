@@ -9,6 +9,7 @@ use KKMClient\Models\Queries\Chunks\BarcodeChunk;
 use KKMClient\Models\Queries\Chunks\CheckString;
 use KKMClient\Models\Queries\Chunks\ImageChunk;
 use KKMClient\Models\Queries\Chunks\PrintTextChunk;
+use KKMClient\Models\Queries\Chunks\RegisterChunk;
 
 class CheckStringsBuilder
 {
@@ -21,23 +22,24 @@ class CheckStringsBuilder
         return $this->lines;
     }
 
-    /**
-     * @param int $lineLength
-     */
     public function setLineLength(int $lineLength): self
     {
         $this->lineLength = $lineLength;
         return $this;
     }
 
+    public function addLine(CheckString $line): self
+    {
+        $this->lines[] = $line;
+        return $this;
+    }
+    public function addProductLine(RegisterChunk $productInfo): self
+    {
+        $this->lines[] = (new CheckString())->setRegister($productInfo);
+        return $this;
+    }
 
-    /**
-     * @param string $text
-     * @param int $font
-     * @param int $intensity
-     * @return $this
-     */
-    public function text(string $text, int $font = 0, $intensity = 0): self
+    public function text(string $text, int $font = 0, int $intensity = 0): self
     {
         $textChunk = (new PrintTextChunk())
             ->setText($text)
@@ -144,6 +146,8 @@ class CheckStringsBuilder
 
         return $this->text($str);
     }
+
+
 
 
 }

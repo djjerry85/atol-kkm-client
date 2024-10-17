@@ -72,9 +72,10 @@ class CheckString
     /**
      * @param RegisterChunk|null $register
      */
-    public function setRegister ( $register ): void
+    public function setRegister ( $register ): static
     {
         $this->register = $register;
+        return $this;
     }
 
     /**
