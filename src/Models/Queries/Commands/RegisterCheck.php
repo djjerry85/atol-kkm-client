@@ -116,7 +116,7 @@ class RegisterCheck implements CommandInterface
     private float $electronicPayment = 0;
 
     // Сумма из предоплаты (зачетом аванса) (2 знака после запятой), Тег 1215
-    #[SerializedName('ElectronicPayment')]
+    #[SerializedName('AdvancePayment')]
     #[Type('float')]
     private float $advancePayment = 0;
 
@@ -473,7 +473,7 @@ class RegisterCheck implements CommandInterface
 
     public function getElectronicPayment(): float
     {
-        return $this->electronicPayment; 
+        return $this->electronicPayment;
     }
 
     public function setAdvancePayment(float $advancePayment): static
