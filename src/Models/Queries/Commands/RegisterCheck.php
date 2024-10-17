@@ -79,9 +79,7 @@ class RegisterCheck implements CommandInterface
     #[Accessor(getter: 'getStrings', setter: 'setStrings')]
     private array $strings = [];
 
-    #[SerializedName('Cash')]
-    #[Type('float')]
-    private ?float $cash = null;
+
 
     #[SerializedName('CashLessType1')]
     #[Type('float')]
@@ -94,6 +92,45 @@ class RegisterCheck implements CommandInterface
     #[SerializedName('CashLessType3')]
     #[Type('float')]
     private ?float $cashlessPayment3 = null;
+
+
+    /** Печатать Слип-чек после чека (а не в чеке)  */
+    #[SerializedName('PrintSlipAfterCheck')]
+    #[Type('boolean')]
+    protected bool $printSlipAfterCheck = false;
+
+
+    /** Печатать Слип-чек дополнительно для кассира (основной слип-чек уже будет печататся в составе чека) */
+    #[SerializedName('PrintSlipForCashier')]
+    #[Type('boolean')]
+    protected bool $printSlipForCashier = false;
+
+    // Наличная оплата (2 знака после запятой), Тег 1031
+    #[SerializedName('Cash')]
+    #[Type('float')]
+    private float $cash = 0;
+
+    // Сумма электронной оплаты (2 знака после запятой), Тег 1081
+    #[SerializedName('ElectronicPayment')]
+    #[Type('float')]
+    private float $electronicPayment = 0;
+
+    // Сумма из предоплаты (зачетом аванса) (2 знака после запятой), Тег 1215
+    #[SerializedName('ElectronicPayment')]
+    #[Type('float')]
+    private float $advancePayment = 0;
+
+    // Сумма постоплатой(в кредит) (2 знака после запятой), Тег 1216
+    #[SerializedName('Credit')]
+    #[Type('float')]
+    private float $credit = 0;
+
+    // Сумма оплаты встречным предоставлением (сертификаты, др. мат.ценности) (2 знака после запятой), Тег 1217
+    #[SerializedName('CashProvision')]
+    #[Type('float')]
+    private float $cashProvision = 0;
+
+
 
     public function getName () : string
     {
@@ -302,23 +339,8 @@ class RegisterCheck implements CommandInterface
         return $this;
     }
 
-    /**
-     * @return float
-     */
-    public function getCash ()
-    {
-        return $this->cash;
-    }
 
-    /**
-     * @param float $cash
-     * @return $this
-     */
-    public function setCash ( float $cash ): static
-    {
-        $this->cash = $cash;
-        return $this;
-    }
+
 
     /**
      * @return float
@@ -409,4 +431,85 @@ class RegisterCheck implements CommandInterface
         $this->factoryNumber = $deviceNumber;
         return $this;
     }
+
+    public function setPrintSlipForCashier(bool $printSlipForCashier): static
+    {
+        $this->printSlipForCashier = $printSlipForCashier;
+        return $this;
+    }
+
+    public function getPrintSlipForCashier(): bool
+    {
+        return $this->printSlipForCashier;
+    }
+
+    public function setPrintSlipAfterCheck(bool $printSlipAfterCheck): static
+    {
+        $this->printSlipAfterCheck = $printSlipAfterCheck;
+        return $this;
+    }
+
+    public function getPrintSlipAfterCheck(): bool
+    {
+        return $this->printSlipAfterCheck;
+    }
+
+    public function getCash(): float
+    {
+        return $this->cash;
+    }
+
+    public function setCash ( float $cash ): static
+    {
+        $this->cash = round($cash, 2, PHP_ROUND_HALF_DOWN);
+        return $this;
+    }
+
+    public function setElectronicPayment(float $electronicPayment): static
+    {
+        $this->electronicPayment = round($electronicPayment, 2, PHP_ROUND_HALF_DOWN);;
+        return $this;
+    }
+
+    public function getElectronicPayment(): float
+    {
+        return $this->electronicPayment; 
+    }
+
+    public function setAdvancePayment(float $advancePayment): static
+    {
+        $this->advancePayment = round($advancePayment, 2, PHP_ROUND_HALF_DOWN);;
+        return $this;
+    }
+
+    public function getAdvancePayment(): float
+    {
+        return $this->advancePayment;
+    }
+
+    public function setCredit(float $credit): static
+    {
+        $this->credit = round($credit, 2, PHP_ROUND_HALF_DOWN);;
+        return $this;
+    }
+
+    public function getCredit(): float
+    {
+        return $this->credit;
+    }
+
+    public function setCashProvision(float $cashProvision): static
+    {
+        $this->cashProvision = round($cashProvision, 2, PHP_ROUND_HALF_DOWN);;
+        return $this;
+    }
+
+    public function getCashProvision(): float
+    {
+        return $this->cashProvision;
+    }
+
+
+
+
 }
