@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zeroabe
- * Date: 16.05.17
- * Time: 15:09
- */
 
 namespace KKMClient\Models\Responses;
 
@@ -12,7 +6,7 @@ namespace KKMClient\Models\Responses;
 use KKMClient\Interfaces\ResponseInterface;
 use KKMClient\Traits\CommonResponseTrait;
 
-class XReport implements ResponseInterface
+class CloseShift implements ResponseInterface
 {
     use CommonResponseTrait;
 }

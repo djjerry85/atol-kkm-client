@@ -34,22 +34,14 @@ class Client implements KKMCommandHandler
      */
     public function __construct (string $url, array $options, bool $async = false)
     {
-        $pattern = '~(https?)?:?/?/?([\D|\d]*):(\d*)/?(Execute)?/?(a?sync)?~';
-        preg_match_all($pattern, $url, $matches);
-        if ($matches[0] && $matches[0][0]) {
-            $url = $matches[1][0] ? $matches[1][0] : 'http';
-            $url .= '://';
-            $url .= $matches[2][0] ? $matches[2][0] : 'localhost';
-            $url .= $matches[3][0] ? ':'.$matches[3][0] : '';
-            $url .= $matches[4][0] ? '/'.$matches[4][0] : '/Execute';
-            if($async) {
-                $url .= '/async/';
-            } elseif(!$async && !$matches[5] && !$matches[5][0]) {
-                $url .= '/sync/';
-            } elseif (!$async && $matches[5] && $matches[5][0]) {
-                $url .= '/'.$matches[5][0].'/';
-            }
+        $url .= '/Execute';
+
+        if ($async) {
+            $url .= '/async/';
+        } else {
+            $url .= '/sync/';
         }
+
         $this->url = $url;
         if(!isset($options['user']) || !$options['user'])
             throw new \Exception("User name has to be provided in options array");
