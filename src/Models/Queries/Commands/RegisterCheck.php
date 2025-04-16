@@ -60,9 +60,10 @@ class RegisterCheck implements CommandInterface
     #[Type('string')]
     #[Accessor(getter: 'getClientAddress', setter: 'setClientAddress')]
     private string $clientAddress = '';
+
     #[SerializedName('TaxVariant')]
-    #[Type('integer')]
-    private int $tax = 0;
+    //#[Type('integer')]
+    private $tax = '';
 
     #[SerializedName('CheckProps')]
     #[Type('array<KKMClient\Models\Queries\Chunks\CheckProperty>')]
@@ -176,7 +177,7 @@ class RegisterCheck implements CommandInterface
     /**
      * @return int
      */
-    public function getCheckType (): int
+    public function getCheckType (): ?int
     {
         return $this->checkType;
     }
@@ -248,16 +249,16 @@ class RegisterCheck implements CommandInterface
     /**
      * @return int
      */
-    public function getTax (): int
+    public function getTax ()
     {
-        return $this->tax;
+        return $this->tax ?? '';
     }
 
     /**
      * @param int $tax
      * @return $this
      */
-    public function setTax ( int $tax ): static
+    public function setTax ( $tax ): static
     {
         $this->tax = $tax;
         return $this;
@@ -508,8 +509,4 @@ class RegisterCheck implements CommandInterface
     {
         return $this->cashProvision;
     }
-
-
-
-
 }
