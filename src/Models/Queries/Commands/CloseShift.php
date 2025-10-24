@@ -14,8 +14,40 @@ class CloseShift implements CommandInterface
 {
     use CommonCommandTrait;
 
+    #[SerializedName('CashierName')]
+    #[Type('string')]
+    #[Accessor(getter: 'getCashierName', setter: 'setCashierName')]
+    private string $cashierName = '';
+
+    #[SerializedName('CashierVATIN')]
+    #[Type('string')]
+    #[Accessor(getter: 'getCashierVATIN', setter: 'setCashierVATIN')]
+    private string $cashierVATIN = '';
+
     public function getName(): string
     {
         return "CloseShift";
+    }
+
+    public function setCashierName(string $cashierName): self
+    {
+        $this->cashierName = $cashierName;
+        return $this;
+    }
+
+    public function getCashierName(): string
+    {
+        return $this->cashierName;
+    }
+
+    public function setCashierVATIN(string $cashierVATIN): self
+    {
+        $this->cashierVATIN = $cashierVATIN;
+        return $this;
+    }
+
+    public function getCashierVATIN(): string
+    {
+        return $this->cashierVATIN;
     }
 }

@@ -40,6 +40,10 @@ trait CommonCommandTrait
     #[Accessor(getter: 'getName', setter: 'setName')]
     private $name;
 
+    #[SerializedName('KeySubLicensing')]
+    #[Type('string')]
+    private $keySubLicensing;
+
     /**
      * @var integer
      */
@@ -121,5 +125,37 @@ trait CommonCommandTrait
     public function getResponseClassName() : string
     {
        return ''.(new \ReflectionClass($this))->getShortName();
+    }
+
+    /**
+     * Email - ваш Email на который выделенны лицензии
+     * Password - пароль от лицензии
+     * Name - Имя машины или имя клиента max 100 символов.
+     * Указывать не обязательно
+     * Позволяет быстрее найти серийный номер в личном кабинете
+     *
+     */
+    public function setSubLicensingKey($email, $password, $name = null): self
+    {
+        //хеш пароля
+        $hash1 = strtoupper(md5($password));
+
+        // солим
+        $hash2 = strtoupper(md5($hash1."Qwerty"));
+
+        // формируем дату в формате "YYYYMMDD" по Москве!
+        $date = date('Ymd'); //Текущая дата по Москве!
+
+        //добавляем данные лицензии
+        $hash3 = strtoupper(md5($hash2.$date));
+
+        // формируем ключ
+        $key = $email.'/'.$hash3;
+        if ($name) {
+            $key .= '/'.$name;
+        }
+
+        $this->keySubLicensing = $key;
+        return $this;
     }
 }

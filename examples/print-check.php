@@ -7,29 +7,31 @@ require './../vendor/autoload.php';
 require 'DishStickerCheck.php';
 require 'ClientMainCheck.php';
 
-//$chek = new ClientMainCheck();
-
-//dump($chek->createCommand());
 
 
-
-$client = new KKMClient\Client(
-    'http://localhost:5893/Execute',
-    [
-        'user' => 'Admin',
-        'pass' => ''
-    ]
-);
+$command = new \KKMClient\Models\Queries\Commands\RegisterCheck();
+$command->setSubLicensingKey('faktcrm@yandex.ru', '12345678', 'best-client');
 
 
-try {
-    //$chek = new DishStickerCheck();
-    $chek = new ClientMainCheck();
+//$client = new KKMClient\Client(
+//    'http://localhost:5893/Execute',
+//    [
+//        'user' => 'Admin',
+//        'pass' => ''
+//    ]
+//);
+//
+//$client->executeCommand($command);
 
-    dump($client->executeCommand($chek->createCommand()));
-} catch (\KKMClient\Exceptions\CheckIsNotPrintable $e) {
-    dump($e);
-}
+
+//try {
+//    //$chek = new DishStickerCheck();
+//    $chek = new ClientMainCheck();
+//
+//    dump($client->executeCommand($chek->createCommand()));
+//} catch (\KKMClient\Exceptions\CheckIsNotPrintable $e) {
+//    dump($e);
+//}
 
 
 
