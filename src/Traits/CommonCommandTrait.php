@@ -127,6 +127,14 @@ trait CommonCommandTrait
        return ''.(new \ReflectionClass($this))->getShortName();
     }
 
+    public function getKeySubLicensing()
+    {
+        return $this->keySubLicensing;
+    }
+
+
+
+
     /**
      * Email - ваш Email на который выделенны лицензии
      * Password - пароль от лицензии
