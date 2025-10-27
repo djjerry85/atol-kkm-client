@@ -132,6 +132,14 @@ trait CommonCommandTrait
         return $this->keySubLicensing;
     }
 
+    public function setKeySubLicensing($keySubLicensing)
+    {
+        $this->keySubLicensing = $keySubLicensing;
+        return $this;
+    }
+
+    
+
 
 
 
