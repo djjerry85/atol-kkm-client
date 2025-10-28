@@ -2,6 +2,7 @@
 
 namespace KKMClient\Traits;
 
+use KKMClient\Exceptions\BadCommandException;
 use Ramsey\Uuid\Uuid;
 Use JMS\Serializer\Annotation\Accessor;
 Use JMS\Serializer\Annotation\AccessType;
@@ -30,7 +31,7 @@ trait CommonCommandTrait
     #[Type('integer')]
     #[AccessType(type:'public_method')]
     #[Accessor(getter: 'getDeviceNumber', setter: 'setDeviceNumber')]
-    private $deviceNumber = 0;
+    private int $deviceNumber = 0;
 
     /**
      * @var string
@@ -109,6 +110,9 @@ trait CommonCommandTrait
      */
     public function getDeviceNumber (): int
     {
+        if ($this->deviceNumber == 0 && empty($this->kkmInn)) {
+            throw new BadCommandException("Не указан NumDevice или InnKkm для поиска устройства");
+        }
         return $this->deviceNumber;
     }
 
@@ -116,7 +120,7 @@ trait CommonCommandTrait
      * @param int $deviceNumber
      * @return $this
      */
-    public function setDeviceNumber ( int $deviceNumber = 0 )
+    public function setDeviceNumber(int $deviceNumber)
     {
         $this->deviceNumber = $deviceNumber;
         return $this;
@@ -138,7 +142,7 @@ trait CommonCommandTrait
         return $this;
     }
 
-    
+
 
 
 
