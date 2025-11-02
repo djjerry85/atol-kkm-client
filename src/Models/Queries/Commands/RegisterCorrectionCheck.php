@@ -21,7 +21,9 @@ use KKMClient\Traits\CommonCommandTrait;
 class RegisterCorrectionCheck extends RegisterCheck
 {
     /**
-     * Тип коррекции 0 - самостоятельно 1 - по предписанию, Тег 1173, Только для чеков коррекции!
+     * Тип коррекции, Тег 1173, Только для чеков коррекции!
+     * 0 - самостоятельно
+     * 1 - по предписанию
      * CorrectionType: 0,
      */
     #[SerializedName('CorrectionType')]
@@ -44,6 +46,24 @@ class RegisterCorrectionCheck extends RegisterCheck
     #[Type('string')]
     private ?string $correctionBaseNumber = null;
 
+    /**
+     * Дополнительный реквизит чека, тег 1192
+     */
+    #[SerializedName('AdditionalAttribute')]
+    #[Type('string')]
+    private ?string $additionalAttribute = null;
+
+    public function setAdditionalAttribute(?string $additionalAttribute): RegisterCorrectionCheck
+    {
+        $this->additionalAttribute = $additionalAttribute;
+        return $this;
+    }
+
+    public function getAdditionalAttribute(): ?string
+    {
+        return $this->additionalAttribute;
+    }
+
     public function setCorrectionType(int $correctionType): RegisterCorrectionCheck
     {
         $this->correctionType = $correctionType;
@@ -61,5 +81,5 @@ class RegisterCorrectionCheck extends RegisterCheck
         $this->correctionBaseNumber = $correctionBaseNumber;
         return $this;
     }
-    
+
 }

@@ -120,7 +120,7 @@ trait CommonCommandTrait
      * @param int $deviceNumber
      * @return $this
      */
-    public function setDeviceNumber(int $deviceNumber)
+    public function setDeviceNumber(int $deviceNumber): self
     {
         $this->deviceNumber = $deviceNumber;
         return $this;
